@@ -13,324 +13,597 @@
   :root{
     --bg:#0f1115; --card:#191c23; --card2:#21252e; --line:#2c313c;
     --txt:#e7eaf0; --dim:#9aa3b2; --acc:#4f8cff; --acc2:#2f6fe0;
-    --good:#36c98b; --warn:#ffb454;
+    --good:#36c98b; --warn:#ffb454; --bad:#ff5d6c;
     --r:14px;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html,body{margin:0;background:var(--bg);color:var(--txt);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-  body{padding:env(safe-area-inset-top) 14px calc(env(safe-area-inset-bottom) + 90px)}
+  body{padding:env(safe-area-inset-top) 14px calc(env(safe-area-inset-bottom) + 88px)}
   h1,h2,h3{margin:0}
-  header{display:flex;align-items:center;justify-content:space-between;
-    padding:18px 2px 12px}
-  header h1{font-size:22px;letter-spacing:.3px}
-  .pill{font-size:12px;color:var(--dim);background:var(--card);
-    padding:6px 10px;border-radius:999px;border:1px solid var(--line)}
-  .card{background:var(--card);border:1px solid var(--line);
-    border-radius:var(--r);padding:14px;margin:0 0 12px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:16px 2px 10px}
+  header h1{font-size:21px;letter-spacing:.3px}
+  .pill{font-size:12px;color:var(--dim);background:var(--card);padding:6px 10px;border-radius:999px;border:1px solid var(--line)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;margin:0 0 12px}
   label{display:block;font-size:12px;color:var(--dim);margin:0 0 5px}
-  input,select{width:100%;background:var(--card2);border:1px solid var(--line);
-    color:var(--txt);font-size:17px;padding:12px;border-radius:10px;outline:none}
-  input:focus,select:focus{border-color:var(--acc)}
-  .row{display:flex;gap:8px}
-  .row>div{flex:1}
-  button{font-family:inherit;font-size:16px;font-weight:600;border:none;
-    border-radius:11px;padding:14px;color:#fff;background:var(--acc);
-    width:100%;margin-top:10px}
+  input,select,textarea{width:100%;background:var(--card2);border:1px solid var(--line);
+    color:var(--txt);font-size:17px;padding:12px;border-radius:10px;outline:none;font-family:inherit}
+  textarea{resize:none;min-height:54px}
+  input:focus,select:focus,textarea:focus{border-color:var(--acc)}
+  .row{display:flex;gap:8px}.row>div{flex:1}
+  button{font-family:inherit;font-size:16px;font-weight:600;border:none;border-radius:11px;
+    padding:14px;color:#fff;background:var(--acc);width:100%;margin-top:10px}
   button:active{transform:scale(.985)}
   button.ghost{background:var(--card2);border:1px solid var(--line);color:var(--txt)}
   button.sm{padding:9px 12px;font-size:14px;width:auto;margin:0}
+  button.danger{background:var(--bad)}
   .muted{color:var(--dim);font-size:13px}
-  .last{font-size:13px;color:var(--good);margin-top:8px;min-height:18px}
-  .sethdr{display:flex;justify-content:space-between;align-items:center;margin:2px 0 10px}
-  .setline{display:flex;align-items:center;gap:10px;padding:9px 10px;
-    background:var(--card2);border:1px solid var(--line);border-radius:10px;margin-bottom:7px}
-  .setline .n{width:24px;height:24px;border-radius:7px;background:var(--acc);
-    display:grid;place-items:center;font-size:13px;font-weight:700}
-  .setline .v{flex:1;font-size:16px}
-  .setline .x{color:var(--dim);font-size:20px;padding:2px 8px}
-  .day{margin-bottom:18px}
-  .day .date{font-size:13px;color:var(--dim);margin:0 2px 8px;font-weight:600;
-    text-transform:uppercase;letter-spacing:.5px}
-  .ex{margin-bottom:9px}
-  .ex .nm{font-weight:600;margin-bottom:3px}
-  .ex .sets{font-size:14px;color:var(--dim)}
-  .empty{text-align:center;color:var(--dim);padding:40px 10px;font-size:15px}
-  nav{position:fixed;left:0;right:0;bottom:0;display:flex;
-    background:rgba(20,23,29,.92);backdrop-filter:blur(12px);
-    border-top:1px solid var(--line);
-    padding:8px 10px calc(env(safe-area-inset-bottom) + 8px)}
-  nav button{flex:1;background:none;color:var(--dim);font-size:12px;
-    font-weight:600;padding:6px;margin:0;display:flex;flex-direction:column;
-    gap:3px;align-items:center}
-  nav button .ic{font-size:21px}
-  nav button.on{color:var(--acc)}
-  .timer{position:fixed;left:14px;right:14px;bottom:calc(env(safe-area-inset-bottom) + 78px);
-    background:var(--acc);border-radius:14px;padding:12px 16px;display:none;
-    align-items:center;justify-content:space-between;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+  .hide{display:none!important}
+
+  /* start/stop bar */
+  .sessbar{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);
+    border-radius:var(--r);padding:12px 14px;margin-bottom:14px}
+  .sessbar.live{border-color:var(--good);background:linear-gradient(180deg,rgba(54,201,139,.10),var(--card))}
+  .sessbar .info{flex:1}
+  .sessbar .info .s1{font-weight:700;font-size:16px}
+  .sessbar .info .s2{font-size:13px;color:var(--dim);font-variant-numeric:tabular-nums}
+  .sessbar button{width:auto;margin:0;padding:11px 16px}
+
+  /* exercise grid */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .extile{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+    padding:13px;display:flex;flex-direction:column;gap:8px;min-height:96px;position:relative}
+  .extile .av{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
+    font-weight:800;font-size:16px;color:#fff}
+  .extile .nm{font-weight:700;font-size:15px;line-height:1.2}
+  .extile .cfg{font-size:11.5px;color:var(--dim);margin-top:auto}
+  .extile .done{position:absolute;top:10px;right:10px;font-size:12px;font-weight:700;color:var(--good)}
+  .extile.add{align-items:center;justify-content:center;border-style:dashed;color:var(--dim);font-weight:700;font-size:15px}
+
+  /* detail / log */
+  .topbar{display:flex;align-items:center;gap:10px;margin:2px 0 14px}
+  .topbar .back{font-size:24px;color:var(--acc);padding:2px 6px}
+  .topbar h2{font-size:19px;flex:1}
+  .topbar .edit{font-size:18px;color:var(--dim);padding:4px 8px}
+  .cfgline{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+  .chip{font-size:12px;background:var(--card2);border:1px solid var(--line);color:var(--dim);
+    padding:6px 10px;border-radius:999px}
+  .last{font-size:13px;color:var(--good);margin:0 0 12px;min-height:18px}
+  .feel{display:flex;gap:7px;margin-top:4px}
+  .feel .f{flex:1;text-align:center;padding:9px 4px;border-radius:10px;background:var(--card2);
+    border:1px solid var(--line);font-size:13px;font-weight:600}
+  .feel .f.on{border-color:var(--acc);background:rgba(79,140,255,.15);color:var(--txt)}
+  .setline{display:flex;align-items:center;gap:10px;padding:9px 10px;background:var(--card2);
+    border:1px solid var(--line);border-radius:10px;margin-bottom:7px}
+  .setline .n{width:24px;height:24px;border-radius:7px;background:var(--acc);display:grid;place-items:center;font-size:13px;font-weight:700;flex:none}
+  .setline .v{flex:1;font-size:15px}
+  .setline .v small{color:var(--dim);font-weight:400}
+  .setline .x{color:var(--dim);font-size:19px;padding:2px 8px}
+  .progress{font-size:13px;color:var(--dim);margin:4px 0 0}
+
+  /* history */
+  .day .date{font-size:13px;color:var(--dim);margin:0 2px 8px;font-weight:700;text-transform:capitalize}
+  .ex{margin-bottom:9px}.ex .nm{font-weight:600;margin-bottom:2px}.ex .sets{font-size:13px;color:var(--dim)}
+  .empty{text-align:center;color:var(--dim);padding:48px 10px;font-size:15px;line-height:1.5}
+
+  /* stats */
+  pre.copyblock{white-space:pre-wrap;word-break:break-word;font-size:13px;line-height:1.5;
+    background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:12px;margin:0;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--txt)}
+  .statgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center}
+  .statgrid .b{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:12px 6px}
+  .statgrid .b .num{font-size:20px;font-weight:800}
+  .statgrid .b .lab{font-size:11px;color:var(--dim);margin-top:2px}
+
+  /* rest timer */
+  .timer{position:fixed;left:14px;right:14px;bottom:calc(env(safe-area-inset-bottom) + 76px);
+    background:var(--acc);border-radius:14px;padding:12px 16px;display:none;align-items:center;
+    justify-content:space-between;box-shadow:0 8px 30px rgba(0,0,0,.45);z-index:50}
   .timer.show{display:flex}
   .timer .t{font-size:24px;font-weight:800;font-variant-numeric:tabular-nums}
-  .timer button{width:auto;margin:0;padding:8px 14px;background:rgba(255,255,255,.2)}
-  .hide{display:none}
-  .datalistwrap{position:relative}
+  .timer .lbl{font-size:11px;opacity:.85}
+  .timer button{width:auto;margin:0;padding:8px 12px;background:rgba(255,255,255,.22)}
+
+  nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:rgba(20,23,29,.92);
+    backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:8px 6px calc(env(safe-area-inset-bottom) + 8px);z-index:40}
+  nav button{flex:1;background:none;color:var(--dim);font-size:11px;font-weight:600;padding:5px;margin:0;
+    display:flex;flex-direction:column;gap:3px;align-items:center}
+  nav button .ic{font-size:20px}
+  nav button.on{color:var(--acc)}
+  .toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom) + 96px);transform:translateX(-50%);
+    background:#000;color:#fff;padding:10px 16px;border-radius:999px;font-size:14px;z-index:60;opacity:0;
+    transition:opacity .2s;pointer-events:none}
+  .toast.show{opacity:.95}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Treeniloki</h1>
+  <h1 id="hTitle">Treeniloki</h1>
   <span class="pill" id="streak">–</span>
 </header>
 
-<!-- LOKITUS -->
-<section id="view-log">
+<!-- ============ LIIKKEET (grid + start/stop) ============ -->
+<section id="view-ex">
+  <div class="sessbar" id="sessbar">
+    <div class="info">
+      <div class="s1" id="sessS1">Ei treeniä käynnissä</div>
+      <div class="s2" id="sessS2">Paina aloittaaksesi</div>
+    </div>
+    <button id="sessBtn">▶ Aloita</button>
+  </div>
+  <div class="grid" id="exGrid"></div>
+</section>
+
+<!-- ============ LIIKKEEN KIRJAUS / DETALJI ============ -->
+<section id="view-detail" class="hide">
+  <div class="topbar">
+    <span class="back" id="detBack">‹</span>
+    <h2 id="detName">Liike</h2>
+    <span class="edit" id="detEdit">✎</span>
+  </div>
+  <div class="cfgline" id="detCfg"></div>
+  <div class="last" id="detLast"></div>
+
+  <div class="card" id="logCard">
+    <div class="row">
+      <div><label>Paino (kg)</label><input id="inKg" type="number" inputmode="decimal" step="0.5" placeholder="0"></div>
+      <div><label>Toistot</label><input id="inReps" type="number" inputmode="numeric" step="1" placeholder="0"></div>
+    </div>
+    <label style="margin-top:12px">Miten meni?</label>
+    <div class="feel" id="feel">
+      <div class="f" data-v="Helppo">😎 Helppo</div>
+      <div class="f" data-v="OK">🙂 OK</div>
+      <div class="f" data-v="Raskas">😮‍💨 Raskas</div>
+      <div class="f" data-v="Petti">❌ Petti</div>
+    </div>
+    <textarea id="inNote" placeholder="Vapaa kommentti (vapaaehtoinen)" style="margin-top:8px"></textarea>
+    <button id="addSet">+ Kirjaa sarja</button>
+    <div class="progress" id="prog"></div>
+  </div>
+
   <div class="card">
-    <label for="ex">Liike</label>
-    <input id="ex" list="exlist" placeholder="esim. Penkkipunnerrus" autocomplete="off">
-    <datalist id="exlist"></datalist>
-    <div class="last" id="lasthint"></div>
+    <h3 style="font-size:15px;margin-bottom:10px" id="setsHdr">Sarjat</h3>
+    <div id="setsList"><div class="muted">Ei vielä sarjoja.</div></div>
+  </div>
 
+  <div class="card" id="exHistCard">
+    <h3 style="font-size:15px;margin-bottom:10px">Tämän liikkeen historia</h3>
+    <div id="exHist"></div>
+  </div>
+</section>
+
+<!-- ============ UUSI/MUOKKAA LIIKE ============ -->
+<section id="view-edit" class="hide">
+  <div class="topbar">
+    <span class="back" id="edBack">‹</span>
+    <h2 id="edTitle">Uusi liike</h2>
+  </div>
+  <div class="card">
+    <label>Liikkeen nimi</label>
+    <input id="edName" placeholder="esim. Kyykky" autocomplete="off">
     <div class="row" style="margin-top:12px">
-      <div>
-        <label for="kg">Paino (kg)</label>
-        <input id="kg" type="number" inputmode="decimal" step="0.5" placeholder="0">
-      </div>
-      <div>
-        <label for="reps">Toistot</label>
-        <input id="reps" type="number" inputmode="numeric" step="1" placeholder="0">
-      </div>
+      <div><label>Tavoite, sarjoja</label><input id="edSets" type="number" inputmode="numeric" min="1" step="1" value="3"></div>
+      <div><label>Progressio (kg)</label><input id="edProg" type="number" inputmode="decimal" step="0.5" value="2.5"></div>
     </div>
-    <button id="addSet">+ Lisää sarja</button>
-  </div>
-
-  <div class="card" id="todayCard">
-    <div class="sethdr">
-      <h3 style="font-size:16px">Tämän liikkeen sarjat tänään</h3>
-      <button class="ghost sm" id="restBtn">Lepo ▸</button>
-    </div>
-    <div id="todaySets"><div class="muted">Ei vielä sarjoja.</div></div>
+    <label style="margin-top:12px">Lepoaika sarjojen välissä</label>
+    <select id="edRest"></select>
+    <label style="margin-top:12px">Oletuspaino aloitukseen (vapaaehtoinen)</label>
+    <input id="edDefKg" type="number" inputmode="decimal" step="0.5" placeholder="esim. 40">
+    <button id="edSave">Tallenna</button>
+    <button class="ghost danger" id="edDelete" style="margin-top:8px">Poista liike</button>
   </div>
 </section>
 
-<!-- HISTORIA -->
-<section id="view-hist" class="hide">
-  <div id="histList"></div>
+<!-- ============ HISTORIA ============ -->
+<section id="view-hist" class="hide"><div id="histList"></div></section>
+
+<!-- ============ TILASTOT ============ -->
+<section id="view-stats" class="hide">
+  <div class="card">
+    <div class="statgrid">
+      <div class="b"><div class="num" id="stT">0</div><div class="lab">treeniä</div></div>
+      <div class="b"><div class="num" id="stS">0</div><div class="lab">sarjaa</div></div>
+      <div class="b"><div class="num" id="stV">0</div><div class="lab">kg volyymi</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+      <h3 style="font-size:15px">Treenin yhteenveto</h3>
+      <button class="sm" id="copySess">⧉ Kopioi</button>
+    </div>
+    <select id="sessPick" style="margin-bottom:10px"></select>
+    <pre class="copyblock" id="sessText">–</pre>
+  </div>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+      <h3 style="font-size:15px">Kaikki treenit (AI-arvioon)</h3>
+      <button class="sm" id="copyAll">⧉ Kopioi</button>
+    </div>
+    <pre class="copyblock" id="allText">–</pre>
+  </div>
 </section>
 
-<!-- ASETUKSET -->
+<!-- ============ ASETUKSET ============ -->
 <section id="view-set" class="hide">
   <div class="card">
-    <h3 style="font-size:16px;margin-bottom:10px">Varmuuskopio</h3>
-    <p class="muted" style="margin:0 0 12px">Vie data tiedostoon Files-appiin. Tee tämä silloin tällöin — näin data on turvassa vaikka iOS siivoaisi selaindatan.</p>
+    <h3 style="font-size:15px;margin-bottom:10px">Varmuuskopio</h3>
+    <p class="muted" style="margin:0 0 12px">Vie data Files-appiin silloin tällöin — turvassa vaikka iOS siivoaisi selaindatan.</p>
     <button id="exportBtn">⤓ Vie varmuuskopio (.json)</button>
     <button class="ghost" id="importBtn">⤒ Tuo varmuuskopio</button>
-    <button class="ghost" id="csvBtn">▤ Vie CSV (Numbers/Excel)</button>
+    <button class="ghost" id="csvBtn">▤ Vie CSV (Numbers)</button>
     <input type="file" id="importFile" accept="application/json" class="hide">
   </div>
   <div class="card">
-    <h3 style="font-size:16px;margin-bottom:8px">Lepotaimerin pituus</h3>
-    <select id="restLen">
-      <option value="60">1:00</option>
-      <option value="90" selected>1:30</option>
-      <option value="120">2:00</option>
-      <option value="180">3:00</option>
-    </select>
-  </div>
-  <div class="card">
-    <p class="muted" style="margin:0">Treenejä yhteensä: <b id="statSessions">0</b> · sarjoja: <b id="statSets">0</b></p>
-    <button class="ghost" id="wipeBtn" style="margin-top:12px">Tyhjennä kaikki data</button>
+    <p class="muted" style="margin:0 0 12px">Versio 2 · data vain tässä puhelimessa</p>
+    <button class="ghost danger" id="wipeBtn">Tyhjennä kaikki data</button>
   </div>
 </section>
 
-<!-- LEPOTAIMERI -->
 <div class="timer" id="timer">
-  <span class="t" id="timerT">0:00</span>
+  <div><div class="lbl" id="timerLbl">Lepo</div><span class="t" id="timerT">0:00</span></div>
   <div style="display:flex;gap:8px">
     <button id="timerPlus">+30s</button>
-    <button id="timerStop">Lopeta</button>
+    <button id="timerStop">OK</button>
   </div>
 </div>
 
 <nav>
-  <button data-v="log" class="on"><span class="ic">＋</span>Lokita</button>
+  <button data-v="ex" class="on"><span class="ic">🏋️</span>Liikkeet</button>
   <button data-v="hist"><span class="ic">▤</span>Historia</button>
+  <button data-v="stats"><span class="ic">📊</span>Tilastot</button>
   <button data-v="set"><span class="ic">⚙</span>Asetukset</button>
 </nav>
+
+<div class="toast" id="toast"></div>
 
 <script>
 const $ = s => document.querySelector(s);
 const KEY = "treeniloki.v1";
+const uid = () => "id"+Math.round(performance.now()*1000)+Math.round(Math.random()*1e6);
 const todayStr = () => new Date().toISOString().slice(0,10);
+const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmtKg = n => (Math.round(n*10)/10).toString().replace(".",",");
 
-// ---- data ----
-function load(){ try{ return JSON.parse(localStorage.getItem(KEY)) || {sets:[]}; }catch(e){ return {sets:[]}; } }
-function save(d){ localStorage.setItem(KEY, JSON.stringify(d)); }
+// ---------- data + migration ----------
+function load(){ try{ return JSON.parse(localStorage.getItem(KEY)); }catch(e){ return null; } }
+function save(){ localStorage.setItem(KEY, JSON.stringify(db)); }
+
 let db = load();
+if(!db) db = {exercises:[], sessions:[], sets:[], v:2};
+// migrate v1 (vain sets-taulukko, ei exercises-kenttää)
+if(!db.exercises){
+  const old = db.sets || [];
+  const exs = [...new Set(old.map(s=>s.ex))].map(name=>({
+    id:uid(), name, targetSets:3, restSec:90, progKg:2.5, defKg:null
+  }));
+  const exByName = Object.fromEntries(exs.map(e=>[e.name,e.id]));
+  const dates = [...new Set(old.map(s=>s.date))].sort();
+  const sessByDate = {};
+  const sessions = dates.map(d=>{ const id=uid(); sessByDate[d]=id;
+    return {id, start:d+"T08:00:00.000Z", end:d+"T09:00:00.000Z"}; });
+  const sets = old.map(s=>({
+    id:s.id||uid(), exId:exByName[s.ex], exName:s.ex, kg:s.kg, reps:s.reps,
+    note:"", sessionId:sessByDate[s.date], date:s.date, t:s.t||s.date+"T08:30:00.000Z"
+  }));
+  db = {exercises:exs, sessions, sets, activeSession:null, v:2};
+  save();
+}
+if(!db.activeSession) db.activeSession = null;
 
-// ---- helpers ----
-function exNames(){
-  return [...new Set(db.sets.map(s=>s.ex))].sort((a,b)=>a.localeCompare(b,'fi'));
-}
-function refreshDatalist(){
-  $("#exlist").innerHTML = exNames().map(n=>`<option value="${esc(n)}">`).join("");
-}
-function esc(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+// ---------- helpers ----------
+const exById = id => db.exercises.find(e=>e.id===id);
+const sessById = id => db.sessions.find(s=>s.id===id);
+const activeSess = () => db.activeSession ? sessById(db.activeSession) : null;
+const setsOfSession = sid => db.sets.filter(s=>s.sessionId===sid);
+const setsOfExInSession = (exId,sid) => db.sets.filter(s=>s.exId===exId && s.sessionId===sid);
+function volume(sets){ return sets.reduce((a,s)=>a+s.kg*s.reps,0); }
+function reps(sets){ return sets.reduce((a,s)=>a+s.reps,0); }
+function hue(str){ let h=0; for(const c of str) h=(h*31+c.charCodeAt(0))%360; return h; }
+function fmtDur(ms){ const m=Math.max(0,Math.round(ms/60000)); return `${Math.floor(m/60)}:${String(m%60).padStart(2,'0')}`; }
+function avInit(name){ return name.trim().slice(0,2).toUpperCase(); }
 
-function lastSessionFor(ex){
-  const days = [...new Set(db.sets.filter(s=>s.ex===ex).map(s=>s.date))].sort();
-  if(!days.length) return null;
-  // viimeisin päivä joka ei ole tänään (vertailukohta)
-  const prev = days.filter(d=>d!==todayStr());
-  const day = prev.length ? prev[prev.length-1] : days[days.length-1];
-  const sets = db.sets.filter(s=>s.ex===ex && s.date===day);
-  return {day, sets};
-}
-
-function updateLastHint(){
-  const ex = $("#ex").value.trim();
-  const el = $("#lasthint");
-  if(!ex){ el.textContent=""; return; }
-  const last = lastSessionFor(ex);
-  if(!last){ el.textContent="Ensimmäinen kerta — hyvä!"; return; }
-  const txt = last.sets.map(s=>`${s.kg}×${s.reps}`).join("  ");
-  el.textContent = `Edellinen (${fmtDate(last.day)}): ${txt}`;
+// last completed session (ei aktiivinen) jossa tätä liikettä tehtiin
+function lastExSession(exId){
+  const sids = [...new Set(db.sets.filter(s=>s.exId===exId).map(s=>s.sessionId))]
+    .filter(id=>id!==db.activeSession);
+  const sorted = sids.map(sessById).filter(Boolean).sort((a,b)=>a.start.localeCompare(b.start));
+  if(!sorted.length) return null;
+  const sess = sorted[sorted.length-1];
+  return {sess, sets:setsOfExInSession(exId, sess.id)};
 }
 
-function todaySetsFor(ex){
-  return db.sets.filter(s=>s.ex===ex && s.date===todayStr());
+let toastTimer;
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("show");
+  clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove("show"),1600); }
+function vibe(p){ if(navigator.vibrate) navigator.vibrate(p); }
+
+// ---------- navigation ----------
+let curView="ex", curExId=null, editingId=null, feelSel="";
+const VIEWS=["ex","detail","edit","hist","stats","set"];
+function show(v){ VIEWS.forEach(x=>$("#view-"+x).classList.toggle("hide",x!==v)); curView=v;
+  document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on", b.dataset.v===v));
+  if(v==="ex") renderGrid();
+  if(v==="hist") renderHistory();
+  if(v==="stats") renderStats();
 }
-function renderToday(){
-  const ex = $("#ex").value.trim();
-  const box = $("#todaySets");
-  if(!ex){ box.innerHTML='<div class="muted">Valitse liike yltä.</div>'; return; }
-  const sets = todaySetsFor(ex);
-  if(!sets.length){ box.innerHTML='<div class="muted">Ei vielä sarjoja tänään.</div>'; return; }
-  box.innerHTML = sets.map((s,i)=>`
-    <div class="setline">
-      <span class="n">${i+1}</span>
-      <span class="v">${s.kg} kg × ${s.reps}</span>
-      <span class="x" data-id="${s.id}">✕</span>
-    </div>`).join("");
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>show(b.dataset.v));
+
+// ---------- start/stop session ----------
+let sessInt=null;
+function renderSessBar(){
+  const a=activeSess(), bar=$("#sessbar"), btn=$("#sessBtn");
+  if(a){
+    bar.classList.add("live");
+    const s=setsOfSession(a.id);
+    $("#sessS1").textContent="Treeni käynnissä";
+    btn.textContent="■ Lopeta"; btn.classList.remove("ghost");
+    btn.style.background="var(--bad)";
+    tickSess();
+    clearInterval(sessInt); sessInt=setInterval(tickSess,1000);
+  } else {
+    bar.classList.remove("live");
+    $("#sessS1").textContent="Ei treeniä käynnissä";
+    $("#sessS2").textContent="Paina aloittaaksesi";
+    btn.textContent="▶ Aloita"; btn.style.background="var(--acc)";
+    clearInterval(sessInt);
+  }
+}
+function tickSess(){ const a=activeSess(); if(!a) return;
+  const s=setsOfSession(a.id);
+  const dur=fmtDur(Date.now()-new Date(a.start).getTime());
+  $("#sessS2").textContent=`${dur} · ${s.length} sarjaa · ${fmtKg(volume(s))} kg`;
+}
+$("#sessBtn").onclick=()=>{
+  if(db.activeSession){
+    const s=setsOfSession(db.activeSession);
+    if(s.length===0){ if(!confirm("Lopeta ilman sarjoja? Treeni poistetaan.")) return;
+      db.sessions=db.sessions.filter(x=>x.id!==db.activeSession); }
+    else { sessById(db.activeSession).end=new Date().toISOString();
+      toast("Treeni tallennettu 💪"); }
+    db.activeSession=null; save(); renderSessBar(); renderGrid();
+  } else {
+    const id=uid(); db.sessions.push({id, start:new Date().toISOString(), end:null});
+    db.activeSession=id; save(); renderSessBar(); renderGrid();
+    toast("Treeni aloitettu");
+  }
+};
+
+// ---------- exercise grid ----------
+function renderGrid(){
+  const g=$("#exGrid"); const a=db.activeSession;
+  const tiles=db.exercises.slice().sort((x,y)=>x.name.localeCompare(y.name,'fi')).map(e=>{
+    const done = a ? setsOfExInSession(e.id,a).length : 0;
+    const doneTag = (a&&done>0) ? `<span class="done">${done}/${e.targetSets} ✓</span>` : "";
+    return `<div class="extile" data-id="${e.id}">
+      <div class="av" style="background:hsl(${hue(e.name)} 60% 45%)">${esc(avInit(e.name))}</div>
+      <div class="nm">${esc(e.name)}</div>
+      <div class="cfg">${e.targetSets}×sarja · lepo ${fmtMMSS(e.restSec)} · +${fmtKg(e.progKg)}kg</div>
+      ${doneTag}</div>`;
+  }).join("");
+  g.innerHTML = tiles + `<div class="extile add" id="addEx">＋ Uusi liike</div>`;
+  g.querySelectorAll(".extile[data-id]").forEach(t=>t.onclick=()=>openDetail(t.dataset.id));
+  $("#addEx").onclick=()=>openEdit(null);
+}
+function fmtMMSS(sec){ return `${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}`; }
+
+// ---------- exercise detail / logging ----------
+function openDetail(exId){
+  curExId=exId; const e=exById(exId); if(!e) return;
+  $("#detName").textContent=e.name;
+  $("#detCfg").innerHTML=`<span class="chip">🎯 ${e.targetSets} sarjaa</span>
+    <span class="chip">⏱ lepo ${fmtMMSS(e.restSec)}</span>
+    <span class="chip">📈 +${fmtKg(e.progKg)} kg</span>`;
+  // edellinen kerta + ehdotettu paino
+  const last=lastExSession(exId);
+  if(last){
+    const txt=last.sets.map(s=>`${fmtKg(s.kg)}×${s.reps}`).join("  ");
+    $("#detLast").textContent=`Edellinen (${fmtFi(last.sess.start)}): ${txt}`;
+    const top=Math.max(...last.sets.map(s=>s.kg));
+    $("#inKg").placeholder=fmtKg(top+e.progKg)+" (ehdotus)";
+    $("#inReps").placeholder=last.sets[last.sets.length-1].reps;
+  } else {
+    $("#detLast").textContent="Ensimmäinen kerta — hyvä!";
+    $("#inKg").placeholder=e.defKg!=null?fmtKg(e.defKg):"0";
+    $("#inReps").placeholder="0";
+  }
+  $("#inKg").value=""; $("#inReps").value=""; $("#inNote").value=""; setFeel("");
+  // kirjaus näkyy vain kun treeni käynnissä
+  $("#logCard").classList.toggle("hide", !db.activeSession);
+  $("#setsHdr").textContent = db.activeSession ? "Sarjat tässä treenissä" : "Aloita treeni kirjataksesi";
+  renderDetailSets(); renderExHist();
+  show("detail");
+}
+function renderDetailSets(){
+  const box=$("#setsList"); const e=exById(curExId);
+  if(!db.activeSession){ box.innerHTML='<div class="muted">Paina ▶ Aloita treeni (Liikkeet-välilehti) niin voit kirjata sarjoja.</div>';
+    $("#prog").textContent=""; return; }
+  const sets=setsOfExInSession(curExId, db.activeSession);
+  box.innerHTML = sets.length ? sets.map((s,i)=>`
+    <div class="setline"><span class="n">${i+1}</span>
+      <span class="v">${fmtKg(s.kg)} kg × ${s.reps}${s.note?` <small>· ${esc(s.note)}</small>`:""}</span>
+      <span class="x" data-id="${s.id}">✕</span></div>`).join("")
+    : '<div class="muted">Ei vielä sarjoja.</div>';
   box.querySelectorAll(".x").forEach(b=>b.onclick=()=>{
-    db.sets = db.sets.filter(s=>s.id!==b.dataset.id); save(db); renderAll();
-  });
+    db.sets=db.sets.filter(s=>s.id!==b.dataset.id); save(); renderDetailSets(); renderGrid(); tickSess(); });
+  const done=sets.length;
+  $("#prog").textContent = done>=e.targetSets ? `✓ Tavoite täynnä (${done}/${e.targetSets})`
+    : `Sarja ${done+1}/${e.targetSets}`;
 }
-
-function fmtDate(d){
-  const [y,m,day]=d.split("-");
-  return `${day}.${m}.`;
+function renderExHist(){
+  const box=$("#exHist");
+  const sids=[...new Set(db.sets.filter(s=>s.exId===curExId).map(s=>s.sessionId))]
+    .filter(id=>id!==db.activeSession)
+    .map(sessById).filter(Boolean).sort((a,b)=>b.start.localeCompare(a.start)).slice(0,8);
+  if(!sids.length){ box.innerHTML='<div class="muted">Ei aiempaa historiaa.</div>'; return; }
+  box.innerHTML=sids.map(se=>{
+    const ss=setsOfExInSession(curExId,se.id);
+    return `<div class="ex"><div class="nm">${fmtFi(se.start)}</div>
+      <div class="sets">${ss.map(s=>`${fmtKg(s.kg)}×${s.reps}`).join(" · ")} &nbsp;(${reps(ss)} t, ${fmtKg(volume(ss))} kg)</div></div>`;
+  }).join("");
 }
+// feel chips
+$("#feel").querySelectorAll(".f").forEach(f=>f.onclick=()=>setFeel(feelSel===f.dataset.v?"":f.dataset.v));
+function setFeel(v){ feelSel=v; $("#feel").querySelectorAll(".f").forEach(f=>f.classList.toggle("on",f.dataset.v===v)); }
 
+$("#addSet").onclick=()=>{
+  if(!db.activeSession){ toast("Aloita treeni ensin"); return; }
+  const e=exById(curExId);
+  let kg=parseFloat($("#inKg").value); let rp=parseInt($("#inReps").value,10);
+  // jos tyhjä, käytä ehdotusta (placeholderista)
+  if(isNaN(kg)){ const ph=parseFloat($("#inKg").placeholder); if(!isNaN(ph)) kg=ph; }
+  if(isNaN(rp)){ const ph=parseInt($("#inReps").placeholder,10); if(!isNaN(ph)) rp=ph; }
+  if(isNaN(kg)||isNaN(rp)||rp<=0){ $("#inKg").focus(); toast("Anna paino ja toistot"); return; }
+  const note=[feelSel, $("#inNote").value.trim()].filter(Boolean).join(" — ");
+  db.sets.push({id:uid(),exId:e.id,exName:e.name,kg,reps:rp,note,
+    sessionId:db.activeSession,date:todayStr(),t:new Date().toISOString()});
+  save(); vibe(15);
+  $("#inKg").value=""; $("#inReps").value=""; $("#inNote").value=""; setFeel("");
+  renderDetailSets(); renderExHist(); tickSess();
+  startRest(e.restSec, e.name);
+};
+
+$("#detBack").onclick=()=>show("ex");
+$("#detEdit").onclick=()=>openEdit(curExId);
+
+// ---------- exercise editor ----------
+function buildRestOptions(){
+  const sel=$("#edRest"); let o="";
+  for(let s=30;s<=300;s+=15) o+=`<option value="${s}">${fmtMMSS(s)}</option>`;
+  sel.innerHTML=o;
+}
+function openEdit(exId){
+  editingId=exId;
+  buildRestOptions();
+  if(exId){ const e=exById(exId);
+    $("#edTitle").textContent="Muokkaa liikettä";
+    $("#edName").value=e.name; $("#edSets").value=e.targetSets;
+    $("#edProg").value=e.progKg; $("#edRest").value=e.restSec;
+    $("#edDefKg").value=e.defKg??""; $("#edDelete").classList.remove("hide");
+  } else {
+    $("#edTitle").textContent="Uusi liike";
+    $("#edName").value=""; $("#edSets").value=3; $("#edProg").value=2.5;
+    $("#edRest").value=90; $("#edDefKg").value=""; $("#edDelete").classList.add("hide");
+  }
+  show("edit");
+}
+$("#edSave").onclick=()=>{
+  const name=$("#edName").value.trim(); if(!name){ $("#edName").focus(); return; }
+  const data={ name, targetSets:Math.max(1,parseInt($("#edSets").value,10)||1),
+    progKg:parseFloat($("#edProg").value)||0, restSec:parseInt($("#edRest").value,10)||90,
+    defKg: $("#edDefKg").value===""?null:parseFloat($("#edDefKg").value) };
+  if(editingId){ const e=exById(editingId); Object.assign(e,data);
+    // päivitä exName olemassa oleviin sarjoihin
+    db.sets.filter(s=>s.exId===editingId).forEach(s=>s.exName=name);
+    save(); openDetail(editingId);
+  } else { const e={id:uid(),...data}; db.exercises.push(e); save();
+    toast("Liike lisätty");
+    if(db.activeSession) openDetail(e.id); else show("ex");
+  }
+};
+$("#edDelete").onclick=()=>{
+  if(!editingId) return;
+  const e=exById(editingId); const cnt=db.sets.filter(s=>s.exId===editingId).length;
+  if(!confirm(`Poistetaanko "${e.name}"?${cnt?` ${cnt} kirjattua sarjaa säilyy historiassa.`:""}`)) return;
+  db.exercises=db.exercises.filter(x=>x.id!==editingId); save(); show("ex");
+};
+$("#edBack").onclick=()=>{ editingId&&exById(editingId)?openDetail(editingId):show("ex"); };
+
+// ---------- rest timer ----------
+let restRemain=0, restInt=null;
+function startRest(sec,label){ clearInterval(restInt); restRemain=sec;
+  $("#timerLbl").textContent="Lepo · "+(label||""); $("#timer").classList.add("show"); paintRest();
+  restInt=setInterval(()=>{ restRemain--; paintRest();
+    if(restRemain<=0){ clearInterval(restInt); vibe([200,100,200]); $("#timerLbl").textContent="Valmis! 💪";
+      setTimeout(()=>$("#timer").classList.remove("show"),1800); } },1000);
+}
+function paintRest(){ const m=Math.floor(Math.max(0,restRemain)/60),s=Math.max(0,restRemain)%60;
+  $("#timerT").textContent=`${m}:${String(s).padStart(2,'0')}`; }
+$("#timerStop").onclick=()=>{ clearInterval(restInt); $("#timer").classList.remove("show"); };
+$("#timerPlus").onclick=()=>{ restRemain+=30; paintRest(); };
+
+// ---------- history ----------
+function fmtFi(iso){ return new Date(iso).toLocaleDateString('fi-FI',{day:'numeric',month:'numeric'}); }
+function fmtFiLong(iso){ return new Date(iso).toLocaleDateString('fi-FI',{weekday:'long',day:'numeric',month:'long'}); }
 function renderHistory(){
-  const box = $("#histList");
-  if(!db.sets.length){ box.innerHTML='<div class="empty">Ei vielä treenejä.<br>Lisää ensimmäinen sarja!</div>'; return; }
-  const days = [...new Set(db.sets.map(s=>s.date))].sort().reverse();
-  box.innerHTML = days.map(d=>{
-    const daySets = db.sets.filter(s=>s.date===d);
-    const exs = [...new Set(daySets.map(s=>s.ex))];
-    const body = exs.map(ex=>{
-      const ss = daySets.filter(s=>s.ex===ex);
-      return `<div class="ex"><div class="nm">${esc(ex)}</div>
-        <div class="sets">${ss.map(s=>`${s.kg}×${s.reps}`).join(" · ")}</div></div>`;
+  const box=$("#histList");
+  const done=db.sessions.filter(s=>setsOfSession(s.id).length).sort((a,b)=>b.start.localeCompare(a.start));
+  if(!done.length){ box.innerHTML='<div class="empty">Ei vielä treenejä.<br>Mene Liikkeet → Aloita treeni!</div>'; return; }
+  box.innerHTML=done.map(se=>{
+    const ss=setsOfSession(se.id);
+    const exIds=[...new Set(ss.map(s=>s.exId))];
+    const body=exIds.map(eid=>{
+      const es=ss.filter(s=>s.exId===eid);
+      return `<div class="ex"><div class="nm">${esc(es[0].exName)}</div>
+        <div class="sets">${es.map(s=>`${fmtKg(s.kg)}×${s.reps}`).join(" · ")}</div></div>`;
     }).join("");
-    const full = new Date(d).toLocaleDateString('fi-FI',{weekday:'long',day:'numeric',month:'long'});
-    return `<div class="day card"><div class="date">${full}</div>${body}</div>`;
+    const dur=se.end?` · ${fmtDur(new Date(se.end)-new Date(se.start))}`:"";
+    return `<div class="day card"><div class="date">${fmtFiLong(se.start)}${dur} · ${fmtKg(volume(ss))} kg</div>${body}</div>`;
   }).join("");
 }
 
+// ---------- stats + copy ----------
+function sessionText(se){
+  const ss=setsOfSession(se.id); if(!ss.length) return "";
+  const exIds=[...new Set(ss.map(s=>s.exId))];
+  let out=`🏋️ Treeni ${new Date(se.start).toLocaleDateString('fi-FI')}`;
+  if(se.end) out+=` · kesto ${fmtDur(new Date(se.end)-new Date(se.start))}`;
+  out+="\n";
+  exIds.forEach(eid=>{
+    const es=ss.filter(s=>s.exId===eid);
+    const sets=es.map(s=>`${fmtKg(s.kg)}×${s.reps}${s.note?` [${s.note}]`:""}`).join(", ");
+    out+=`• ${es[0].exName} — ${es.length} sarjaa: ${sets}  (${reps(es)} t, ${fmtKg(volume(es))} kg)\n`;
+  });
+  out+=`Yhteensä: ${exIds.length} liikettä · ${ss.length} sarjaa · ${reps(ss)} toistoa · volyymi ${fmtKg(volume(ss))} kg`;
+  return out;
+}
 function renderStats(){
-  const sessions = new Set(db.sets.map(s=>s.date)).size;
-  $("#statSessions").textContent = sessions;
-  $("#statSets").textContent = db.sets.length;
-  // streak: peräkkäiset päivät tähän asti
-  $("#streak").textContent = sessions ? `${sessions} treeniä` : "Aloita!";
+  const done=db.sessions.filter(s=>setsOfSession(s.id).length).sort((a,b)=>b.start.localeCompare(a.start));
+  $("#stT").textContent=done.length;
+  $("#stS").textContent=db.sets.length;
+  $("#stV").textContent=fmtKg(volume(db.sets));
+  const pick=$("#sessPick");
+  pick.innerHTML=done.map(s=>`<option value="${s.id}">${new Date(s.start).toLocaleDateString('fi-FI',{weekday:'short',day:'numeric',month:'numeric'})} · ${fmtKg(volume(setsOfSession(s.id)))} kg</option>`).join("");
+  function paintSess(){ const se=sessById(pick.value)||done[0];
+    $("#sessText").textContent= se?sessionText(se):"Ei treenejä."; }
+  pick.onchange=paintSess; paintSess();
+  $("#allText").textContent = done.length
+    ? done.slice().reverse().map(sessionText).join("\n\n") : "Ei treenejä.";
 }
-
-function renderAll(){ refreshDatalist(); updateLastHint(); renderToday(); renderHistory(); renderStats(); }
-
-// ---- add set ----
-$("#addSet").onclick = ()=>{
-  const ex = $("#ex").value.trim();
-  const kg = parseFloat($("#kg").value);
-  const reps = parseInt($("#reps").value,10);
-  if(!ex){ $("#ex").focus(); return; }
-  if(isNaN(kg) || isNaN(reps) || reps<=0){ $("#kg").focus(); return; }
-  db.sets.push({id:String(performance.now())+Math.round(kg*reps),ex,kg,reps,date:todayStr(),t:new Date().toISOString()});
-  save(db);
-  if(navigator.vibrate) navigator.vibrate(15);
-  renderAll();
-  startRest(); // automaattinen lepotaimeri
-};
-
-$("#ex").addEventListener("input", ()=>{ updateLastHint(); renderToday();
-  // esitäytä edellisen kerran paino/toistot ehdotukseksi
-  const last = lastSessionFor($("#ex").value.trim());
-  if(last && last.sets.length && !$("#kg").value && !$("#reps").value){
-    const s = last.sets[last.sets.length-1];
-    $("#kg").placeholder = s.kg; $("#reps").placeholder = s.reps;
-  }
-});
-
-// ---- rest timer ----
-let restRemain=0, restInt=null;
-function restLen(){ return parseInt($("#restLen").value,10)||90; }
-function showTimer(){ $("#timer").classList.add("show"); }
-function hideTimer(){ $("#timer").classList.remove("show"); }
-function paintTimer(){ const m=Math.floor(restRemain/60),s=restRemain%60;
-  $("#timerT").textContent=`${m}:${String(s).padStart(2,'0')}`; }
-function startRest(){
-  clearInterval(restInt); restRemain=restLen(); showTimer(); paintTimer();
-  restInt=setInterval(()=>{
-    restRemain--; paintTimer();
-    if(restRemain<=0){ clearInterval(restInt); if(navigator.vibrate)navigator.vibrate([200,100,200]);
-      setTimeout(hideTimer,1500); }
-  },1000);
+async function copyText(str){
+  try{ await navigator.clipboard.writeText(str); toast("Kopioitu ✓"); }
+  catch(e){ const ta=document.createElement("textarea"); ta.value=str; document.body.appendChild(ta);
+    ta.select(); try{document.execCommand("copy"); toast("Kopioitu ✓");}catch(_){toast("Kopiointi epäonnistui");}
+    ta.remove(); }
 }
-$("#restBtn").onclick=startRest;
-$("#timerStop").onclick=()=>{ clearInterval(restInt); hideTimer(); };
-$("#timerPlus").onclick=()=>{ restRemain+=30; paintTimer(); };
+$("#copySess").onclick=()=>copyText($("#sessText").textContent);
+$("#copyAll").onclick=()=>copyText($("#allText").textContent);
 
-// ---- nav ----
-document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{
-  document.querySelectorAll("nav button").forEach(x=>x.classList.remove("on"));
-  b.classList.add("on");
-  ["log","hist","set"].forEach(v=>$("#view-"+v).classList.toggle("hide", v!==b.dataset.v));
-  if(b.dataset.v==="hist") renderHistory();
-});
-
-// ---- backup ----
-$("#exportBtn").onclick=()=>{
-  const blob=new Blob([JSON.stringify(db,null,2)],{type:"application/json"});
-  dl(blob, `treeniloki-${todayStr()}.json`);
-};
+// ---------- backup ----------
+function dl(blob,name){ const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
+  a.download=name; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),2000); }
+$("#exportBtn").onclick=()=>dl(new Blob([JSON.stringify(db,null,2)],{type:"application/json"}),`treeniloki-${todayStr()}.json`);
 $("#csvBtn").onclick=()=>{
-  const rows=[["paiva","liike","paino_kg","toistot"]];
-  db.sets.slice().sort((a,b)=>a.t.localeCompare(b.t)).forEach(s=>rows.push([s.date,s.ex,s.kg,s.reps]));
+  const rows=[["paiva","liike","paino_kg","toistot","kommentti"]];
+  db.sets.slice().sort((a,b)=>a.t.localeCompare(b.t)).forEach(s=>rows.push([s.date,s.exName,s.kg,s.reps,s.note||""]));
   const csv=rows.map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(",")).join("\n");
-  dl(new Blob([csv],{type:"text/csv"}), `treeniloki-${todayStr()}.csv`);
+  dl(new Blob([csv],{type:"text/csv"}),`treeniloki-${todayStr()}.csv`);
 };
-function dl(blob,name){ const a=document.createElement("a");
-  a.href=URL.createObjectURL(blob); a.download=name; a.click();
-  setTimeout(()=>URL.revokeObjectURL(a.href),2000); }
 $("#importBtn").onclick=()=>$("#importFile").click();
-$("#importFile").onchange=e=>{
-  const f=e.target.files[0]; if(!f)return;
-  const r=new FileReader();
-  r.onload=()=>{ try{
-    const d=JSON.parse(r.result);
-    if(!d.sets||!Array.isArray(d.sets)) throw 0;
-    if(confirm(`Tuodaan ${d.sets.length} sarjaa. Korvataan nykyinen data?`)){
-      db=d; save(db); renderAll(); alert("Tuotu!");
-    }
-  }catch(_){ alert("Virheellinen tiedosto."); } };
-  r.readAsText(f);
-};
+$("#importFile").onchange=e=>{ const f=e.target.files[0]; if(!f) return; const r=new FileReader();
+  r.onload=()=>{ try{ const d=JSON.parse(r.result); if(!Array.isArray(d.sets)) throw 0;
+    if(confirm(`Tuodaan: ${d.sets.length} sarjaa, ${(d.exercises||[]).length} liikettä. Korvataan nykyinen?`)){
+      db=d; if(!db.activeSession) db.activeSession=null; save(); show("ex"); toast("Tuotu ✓"); } }
+    catch(_){ alert("Virheellinen tiedosto."); } };
+  r.readAsText(f); };
 $("#wipeBtn").onclick=()=>{ if(confirm("Poistetaanko KAIKKI data? Tee varmuuskopio ensin.")){
-  db={sets:[]}; save(db); renderAll(); } };
+  db={exercises:[],sessions:[],sets:[],activeSession:null,v:2}; save(); show("ex"); } };
 
-// ---- init ----
-renderAll();
-if("serviceWorker" in navigator){ navigator.serviceWorker.register("sw.js").catch(()=>{}); }
+// ---------- init ----------
+function refreshStreak(){ const n=db.sessions.filter(s=>setsOfSession(s.id).length).length;
+  $("#streak").textContent=n?`${n} treeniä`:"Aloita!"; }
+renderSessBar(); renderGrid(); refreshStreak();
+if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(()=>{});
 </script>
 </body>
 </html>
