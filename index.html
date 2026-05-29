@@ -275,7 +275,9 @@
   </div></div>
   <div class="card">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-      <h3 style="font-size:15px">Treenin yhteenveto</h3><button class="sm" id="copySess">⧉ Kopioi</button></div>
+      <h3 style="font-size:15px">Treenin yhteenveto</h3>
+      <div style="display:flex;gap:8px"><button class="sm" id="copySess">⧉ Kopioi</button>
+        <button class="sm ghost" id="delSessStats" style="color:var(--bad)">🗑 Poista</button></div></div>
     <select id="sessPick" style="margin-bottom:10px"></select><pre class="copyblock" id="sessText">–</pre>
   </div>
   <div class="card">
@@ -293,7 +295,7 @@
     <button class="ghost" id="importBtn">⤒ Tuo varmuuskopio</button>
     <button class="ghost" id="csvBtn">▤ Vie CSV (Numbers)</button>
     <input type="file" id="importFile" accept="application/json" class="hide"></div>
-  <div class="card"><p class="muted" style="margin:0 0 12px">Versio 4 · data vain tässä puhelimessa</p>
+  <div class="card"><p class="muted" style="margin:0 0 12px">Versio 5 · data vain tässä puhelimessa</p>
     <button class="ghost danger" id="wipeBtn">Tyhjennä kaikki data</button></div>
 </section>
 
@@ -663,6 +665,19 @@ function paintRest(){ const m=Math.floor(Math.max(0,restRemain)/60),s=Math.max(0
 $("#timerStop").onclick=()=>{ clearInterval(restInt); $("#timer").classList.remove("show"); };
 $("#timerPlus").onclick=()=>{ restRemain+=30; paintRest(); };
 
+// ---------- delete session ----------
+function deleteSession(id){ const se=sessById(id); if(!se) return;
+  const cnt=setsOfSession(id).length;
+  if(!confirm(`Poistetaanko tämä treeni pysyvästi?\n${cnt} kirjausta katoaa. Tätä ei voi perua.`)) return;
+  db.sets=db.sets.filter(s=>s.sessionId!==id);
+  db.sessions=db.sessions.filter(s=>s.id!==id);
+  if(db.activeSession===id){ db.activeSession=null; renderSessBar(); renderGrid(); }
+  save(); refreshStreak();
+  if(curView==="hist") renderHistory(); if(curView==="stats") renderStats();
+  toast("Treeni poistettu");
+}
+$("#delSessStats").onclick=()=>{ const id=$("#sessPick").value; if(id) deleteSession(id); };
+
 // ---------- history ----------
 function renderHistory(){ const box=$("#histList");
   const done=db.sessions.filter(s=>setsOfSession(s.id).length).sort((a,b)=>b.start.localeCompare(a.start));
@@ -671,7 +686,10 @@ function renderHistory(){ const box=$("#histList");
     const body=exIds.map(eid=>{ const es=ss.filter(s=>s.exId===eid);
       return `<div class="ex"><div class="nm">${esc(es[0].exName)}</div><div class="sets">${es.map(lineFor).join(" · ")}</div></div>`; }).join("");
     const dur=se.end?` · ${fmtDur(new Date(se.end)-new Date(se.start))}`:""; const pn=se.programName?` · ${esc(se.programName)}`:"";
-    return `<div class="day card"><div class="date">${fmtFiLong(se.start)}${pn}${dur} · ${fmtKg(volume(ss))} kg</div>${body}</div>`; }).join("");
+    return `<div class="day card"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:8px">
+      <div class="date" style="margin:0">${fmtFiLong(se.start)}${pn}${dur} · ${fmtKg(volume(ss))} kg</div>
+      <button class="sm ghost delSess" data-id="${se.id}" style="color:var(--bad);flex:none;padding:6px 9px">🗑</button></div>${body}</div>`; }).join("");
+  box.querySelectorAll(".delSess").forEach(b=>b.onclick=()=>deleteSession(b.dataset.id));
 }
 
 // ---------- PR ----------
