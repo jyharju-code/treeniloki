@@ -43,43 +43,35 @@
   .sessbar{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);
     border-radius:var(--r);padding:12px 14px;margin-bottom:14px}
   .sessbar.live{border-color:var(--good);background:linear-gradient(180deg,rgba(54,201,139,.10),var(--card))}
-  .sessbar .info{flex:1}
-  .sessbar .info .s1{font-weight:700;font-size:16px}
+  .sessbar .info{flex:1}.sessbar .info .s1{font-weight:700;font-size:16px}
   .sessbar .info .s2{font-size:13px;color:var(--dim);font-variant-numeric:tabular-nums}
   .sessbar button{width:auto;margin:0;padding:11px 16px}
 
-  .seclabel{font-size:12px;color:var(--dim);font-weight:700;text-transform:uppercase;
-    letter-spacing:.5px;margin:2px 2px 8px}
+  .seclabel{font-size:12px;color:var(--dim);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin:2px 2px 8px}
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .extile{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
     padding:13px;display:flex;flex-direction:column;gap:8px;min-height:96px;position:relative}
-  .extile.cardio{border-color:#3a2c22}
-  .extile .av{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
-    font-weight:800;font-size:16px;color:#fff}
+  .extile .av{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font-weight:800;font-size:16px;color:#fff}
   .extile .nm{font-weight:700;font-size:15px;line-height:1.2}
   .extile .cfg{font-size:11.5px;color:var(--dim);margin-top:auto}
   .extile .done{position:absolute;top:10px;right:10px;font-size:12px;font-weight:700;color:var(--good)}
   .extile.add{align-items:center;justify-content:center;border-style:dashed;color:var(--dim);font-weight:700;font-size:15px}
 
-  .progrow{display:flex;align-items:center;gap:10px;padding:11px;background:var(--card2);
-    border:1px solid var(--line);border-radius:11px;margin-bottom:8px}
-  .progrow .pn{flex:1;font-weight:600}
-  .progrow .pm{font-size:12px;color:var(--dim)}
+  .progrow{display:flex;align-items:center;gap:10px;padding:11px;background:var(--card2);border:1px solid var(--line);border-radius:11px;margin-bottom:8px}
+  .progrow .pn{flex:1;font-weight:600}.progrow .pm{font-size:12px;color:var(--dim)}
   .progrow button{width:auto;margin:0;padding:9px 14px}
 
   .topbar{display:flex;align-items:center;gap:10px;margin:2px 0 14px}
   .topbar .back{font-size:24px;color:var(--acc);padding:2px 6px}
-  .topbar h2{font-size:19px;flex:1}
-  .topbar .edit{font-size:18px;color:var(--dim);padding:4px 8px}
+  .topbar h2{font-size:19px;flex:1}.topbar .edit{font-size:18px;color:var(--dim);padding:4px 8px}
   .cfgline{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
   .chip{font-size:12px;background:var(--card2);border:1px solid var(--line);color:var(--dim);padding:6px 10px;border-radius:999px}
   .last{font-size:13px;color:var(--good);margin:0 0 12px;min-height:18px}
   .feel{display:flex;gap:7px;margin-top:4px}
-  .feel .f{flex:1;text-align:center;padding:9px 4px;border-radius:10px;background:var(--card2);
-    border:1px solid var(--line);font-size:13px;font-weight:600}
+  .feel .f{flex:1;text-align:center;padding:9px 4px;border-radius:10px;background:var(--card2);border:1px solid var(--line);font-size:13px;font-weight:600}
   .feel .f.on{border-color:var(--acc);background:rgba(79,140,255,.15);color:var(--txt)}
-  .setline{display:flex;align-items:center;gap:10px;padding:9px 10px;background:var(--card2);
-    border:1px solid var(--line);border-radius:10px;margin-bottom:7px}
+  #edType .f{font-size:12px;padding:9px 2px}
+  .setline{display:flex;align-items:center;gap:10px;padding:9px 10px;background:var(--card2);border:1px solid var(--line);border-radius:10px;margin-bottom:7px}
   .setline .n{width:24px;height:24px;border-radius:7px;background:var(--acc);display:grid;place-items:center;font-size:13px;font-weight:700;flex:none}
   .setline .n.off{background:var(--line);color:var(--dim)}
   .setline .v{flex:1;font-size:15px}.setline .v small{color:var(--dim);font-weight:400}
@@ -105,22 +97,29 @@
   .statgrid .b .num{font-size:19px;font-weight:800}.statgrid .b .lab{font-size:11px;color:var(--dim);margin-top:2px}
 
   .timer{position:fixed;left:14px;right:14px;bottom:calc(env(safe-area-inset-bottom) + 76px);
-    background:var(--acc);border-radius:14px;padding:12px 16px;display:none;align-items:center;
-    justify-content:space-between;box-shadow:0 8px 30px rgba(0,0,0,.45);z-index:50}
+    background:var(--acc);border-radius:14px;padding:12px 16px;display:none;align-items:center;justify-content:space-between;
+    box-shadow:0 8px 30px rgba(0,0,0,.45);z-index:50}
   .timer.show{display:flex}
-  .timer .t{font-size:24px;font-weight:800;font-variant-numeric:tabular-nums}
-  .timer .lbl{font-size:11px;opacity:.85}
+  .timer .t{font-size:24px;font-weight:800;font-variant-numeric:tabular-nums}.timer .lbl{font-size:11px;opacity:.85}
   .timer button{width:auto;margin:0;padding:8px 12px;background:rgba(255,255,255,.22)}
 
-  nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:rgba(20,23,29,.92);
-    backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:8px 4px calc(env(safe-area-inset-bottom) + 8px);z-index:40}
+  /* FULL SCREEN HOLD TIMER */
+  .fs{position:fixed;inset:0;z-index:100;background:#0f1115;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:6px;padding:env(safe-area-inset-top) 16px env(safe-area-inset-bottom)}
+  .fsphase{font-size:8vmin;font-weight:800;letter-spacing:1px;color:var(--dim);text-align:center}
+  .fsnum{font-size:46vmin;font-weight:900;line-height:.95;font-variant-numeric:tabular-nums;color:var(--good)}
+  .fssub{font-size:4.5vmin;color:var(--dim)}
+  .fsact{display:flex;flex-direction:column;gap:10px;width:100%;max-width:440px;margin-top:14px}
+  .fsact button{padding:18px;font-size:18px;margin:0}
+  #fsStop{background:var(--bad)}
+
+  nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:rgba(20,23,29,.92);backdrop-filter:blur(12px);
+    border-top:1px solid var(--line);padding:8px 4px calc(env(safe-area-inset-bottom) + 8px);z-index:40}
   nav button{flex:1;background:none;color:var(--dim);font-size:10.5px;font-weight:600;padding:5px 2px;margin:0;
     display:flex;flex-direction:column;gap:3px;align-items:center}
-  nav button .ic{font-size:19px}
-  nav button.on{color:var(--acc)}
+  nav button .ic{font-size:19px}nav button.on{color:var(--acc)}
   .toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom) + 96px);transform:translateX(-50%);
-    background:#000;color:#fff;padding:10px 16px;border-radius:999px;font-size:14px;z-index:60;opacity:0;
-    transition:opacity .2s;pointer-events:none}
+    background:#000;color:#fff;padding:10px 16px;border-radius:999px;font-size:14px;z-index:60;opacity:0;transition:opacity .2s;pointer-events:none}
   .toast.show{opacity:.95}
 </style>
 </head>
@@ -128,30 +127,25 @@
 
 <header><h1>Treeniloki</h1><span class="pill" id="streak">–</span></header>
 
-<!-- ============ LIIKKEET ============ -->
+<!-- LIIKKEET -->
 <section id="view-ex">
   <div class="sessbar" id="sessbar">
     <div class="info"><div class="s1" id="sessS1">Ei treeniä käynnissä</div>
       <div class="s2" id="sessS2">Paina aloittaaksesi</div></div>
     <button id="sessBtn">▶ Aloita</button>
   </div>
-
   <div class="card" id="progCard">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-      <h3 style="font-size:15px">Treeniohjelmat</h3>
-      <button class="sm" id="newProg">＋ Luo</button>
-    </div>
+      <h3 style="font-size:15px">Treeniohjelmat</h3><button class="sm" id="newProg">＋ Luo</button></div>
     <div id="progList"></div>
   </div>
-
   <div class="seclabel">Liikkeet</div>
   <div class="grid" id="exGrid"></div>
 </section>
 
-<!-- ============ KIRJAUS / DETALJI ============ -->
+<!-- KIRJAUS -->
 <section id="view-detail" class="hide">
-  <div class="topbar"><span class="back" id="detBack">‹</span>
-    <h2 id="detName">Liike</h2><span class="edit" id="detEdit">✎</span></div>
+  <div class="topbar"><span class="back" id="detBack">‹</span><h2 id="detName">Liike</h2><span class="edit" id="detEdit">✎</span></div>
   <div class="cfgline" id="detCfg"></div>
   <div class="last" id="detLast"></div>
 
@@ -170,13 +164,22 @@
       <label style="margin-top:12px">Keskisyke (jos on)</label>
       <input id="inHr" type="number" inputmode="numeric" step="1" placeholder="esim. 142">
     </div>
+    <div id="holdInputs" class="hide">
+      <button id="fsStart" style="background:var(--good)">▶ Aloita pito (kokoruutu)</button>
+      <label style="margin-top:12px">…tai kirjaa sekunnit käsin</label>
+      <input id="inSec" type="number" inputmode="numeric" step="1" placeholder="esim. 50">
+    </div>
+    <div id="carryInputs" class="hide">
+      <div class="row">
+        <div><label>Paino (kg)</label><input id="inCkg" type="number" inputmode="decimal" step="0.5" placeholder="0"></div>
+        <div><label>Matka (m)</label><input id="inCdist" type="number" inputmode="decimal" step="1" placeholder="0"></div>
+      </div>
+    </div>
 
     <label style="margin-top:12px">Miten meni?</label>
     <div class="feel" id="feel">
-      <div class="f" data-v="Helppo">😎 Helppo</div>
-      <div class="f" data-v="OK">🙂 OK</div>
-      <div class="f" data-v="Raskas">😮‍💨 Raskas</div>
-      <div class="f" data-v="Petti">❌ Petti</div>
+      <div class="f" data-v="Helppo">😎 Helppo</div><div class="f" data-v="OK">🙂 OK</div>
+      <div class="f" data-v="Raskas">😮‍💨 Raskas</div><div class="f" data-v="Petti">❌ Petti</div>
     </div>
     <textarea id="inNote" placeholder="Huomioita (vapaaehtoinen)" style="margin-top:8px"></textarea>
     <button id="addSet">+ Kirjaa</button>
@@ -185,27 +188,24 @@
 
   <div class="card"><h3 style="font-size:15px;margin-bottom:10px" id="setsHdr">Sarjat</h3>
     <div id="setsList"><div class="muted">Ei vielä sarjoja.</div></div></div>
-
-  <div class="card"><h3 style="font-size:15px;margin-bottom:10px">Tämän liikkeen historia</h3>
-    <div id="exHist"></div></div>
+  <div class="card"><h3 style="font-size:15px;margin-bottom:10px">Tämän liikkeen historia</h3><div id="exHist"></div></div>
 </section>
 
-<!-- ============ UUSI/MUOKKAA LIIKE ============ -->
+<!-- UUSI/MUOKKAA LIIKE -->
 <section id="view-edit" class="hide">
   <div class="topbar"><span class="back" id="edBack">‹</span><h2 id="edTitle">Uusi liike</h2></div>
   <div class="card">
     <label>Tyyppi</label>
     <div class="feel" id="edType">
-      <div class="f on" data-v="strength">🏋️ Voima</div>
-      <div class="f" data-v="cardio">🏃 Kestävyys</div>
+      <div class="f on" data-v="strength">🏋️ Voima</div><div class="f" data-v="cardio">🏃 Kesto</div>
+      <div class="f" data-v="hold">⏱ Pito</div><div class="f" data-v="carry">🧳 Kanto</div>
     </div>
     <label style="margin-top:12px" id="edNameLbl">Liikkeen nimi</label>
     <input id="edName" placeholder="esim. Kyykky" autocomplete="off">
     <datalist id="sportlist">
-      <option value="Soutu (sali)"><option value="Soutu"><option value="Juoksu (ulkona)">
-      <option value="Juoksu (matto)"><option value="Pyöräily (sali)"><option value="Pyöräily (ulkona)">
-      <option value="Kävely"><option value="Hiihto"><option value="Uinti">
-      <option value="Crosstrainer"><option value="Porraskone"><option value="Hyppynaru">
+      <option value="Soutu (sali)"><option value="Soutu"><option value="Juoksu (ulkona)"><option value="Juoksu (matto)">
+      <option value="Pyöräily (sali)"><option value="Pyöräily (ulkona)"><option value="Kävely"><option value="Hiihto">
+      <option value="Uinti"><option value="Crosstrainer"><option value="Porraskone"><option value="Hyppynaru">
     </datalist>
 
     <div id="edStrengthFields">
@@ -213,10 +213,31 @@
         <div><label>Tavoite, sarjoja</label><input id="edSets" type="number" inputmode="numeric" min="1" step="1" value="3"></div>
         <div><label>Progressio (kg)</label><input id="edProg" type="number" inputmode="decimal" step="0.5" value="2.5"></div>
       </div>
-      <label style="margin-top:12px">Lepoaika sarjojen välissä</label>
-      <select id="edRest"></select>
-      <label style="margin-top:12px">Oletuspaino aloitukseen (vapaaehtoinen)</label>
+      <label style="margin-top:12px">Lepoaika sarjojen välissä</label><select id="edRest"></select>
+      <label style="margin-top:12px">Oletuspaino (vapaaehtoinen)</label>
       <input id="edDefKg" type="number" inputmode="decimal" step="0.5" placeholder="esim. 40">
+    </div>
+
+    <div id="edHoldFields" class="hide">
+      <div class="row" style="margin-top:12px">
+        <div><label>Tavoite (sekuntia)</label><input id="edHoldSec" type="number" inputmode="numeric" min="1" step="1" value="50"></div>
+        <div><label>Toistot</label><input id="edHoldSets" type="number" inputmode="numeric" min="1" step="1" value="3"></div>
+      </div>
+      <label style="margin-top:12px">Lepoaika</label><select id="edHoldRest"></select>
+      <label style="margin-top:12px">Progressio (sekuntia)</label>
+      <input id="edHoldProg" type="number" inputmode="numeric" step="1" value="5">
+    </div>
+
+    <div id="edCarryFields" class="hide">
+      <div class="row" style="margin-top:12px">
+        <div><label>Oletuspaino (kg)</label><input id="edCkg" type="number" inputmode="decimal" step="0.5" placeholder="esim. 40"></div>
+        <div><label>Tavoitematka (m)</label><input id="edCdist" type="number" inputmode="numeric" step="1" placeholder="esim. 20"></div>
+      </div>
+      <div class="row" style="margin-top:12px">
+        <div><label>Toistot</label><input id="edCsets" type="number" inputmode="numeric" min="1" step="1" value="3"></div>
+        <div><label>Progressio (kg)</label><input id="edCprog" type="number" inputmode="decimal" step="0.5" value="2.5"></div>
+      </div>
+      <label style="margin-top:12px">Lepoaika</label><select id="edCrest"></select>
     </div>
 
     <button id="edSave">Tallenna</button>
@@ -224,43 +245,38 @@
   </div>
 </section>
 
-<!-- ============ OHJELMAN MUOKKAUS ============ -->
+<!-- OHJELMA -->
 <section id="view-prog" class="hide">
   <div class="topbar"><span class="back" id="pgBack">‹</span><h2 id="pgTitle">Treeniohjelma</h2></div>
-  <div class="card">
-    <label>Ohjelman nimi</label>
-    <input id="pgName" placeholder="esim. Jalkapäivä" autocomplete="off">
-  </div>
-  <div class="card">
-    <h3 style="font-size:15px;margin-bottom:6px">Valitse liikkeet (klikkaa)</h3>
-    <p class="muted" style="margin:0 0 10px">Numero kertoo järjestyksen treenissä.</p>
-    <div id="pgPick"></div>
-  </div>
+  <div class="card"><label>Ohjelman nimi</label><input id="pgName" placeholder="esim. Jalkapäivä" autocomplete="off"></div>
+  <div class="card"><h3 style="font-size:15px;margin-bottom:6px">Valitse liikkeet (klikkaa)</h3>
+    <p class="muted" style="margin:0 0 10px">Numero kertoo järjestyksen.</p><div id="pgPick"></div></div>
   <button id="pgSave">Tallenna ohjelma</button>
   <button class="ghost danger" id="pgDelete" style="margin-top:8px">Poista ohjelma</button>
 </section>
 
-<!-- ============ HISTORIA ============ -->
+<!-- HISTORIA -->
 <section id="view-hist" class="hide"><div id="histList"></div></section>
 
-<!-- ============ PR ============ -->
+<!-- PR -->
 <section id="view-pr" class="hide">
-  <div class="card"><h3 style="font-size:15px;margin-bottom:6px">🏋️ Voima – ennätykset</h3><div id="prStr"></div></div>
-  <div class="card"><h3 style="font-size:15px;margin-bottom:6px">🏃 Kestävyys – ennätykset</h3><div id="prCar"></div></div>
+  <div class="card"><h3 style="font-size:15px;margin-bottom:6px">🏋️ Voima</h3><div id="prStr"></div></div>
+  <div class="card"><h3 style="font-size:15px;margin-bottom:6px">⏱ Pito</h3><div id="prHold"></div></div>
+  <div class="card"><h3 style="font-size:15px;margin-bottom:6px">🧳 Kanto</h3><div id="prCarry"></div></div>
+  <div class="card"><h3 style="font-size:15px;margin-bottom:6px">🏃 Kestävyys</h3><div id="prCar"></div></div>
 </section>
 
-<!-- ============ TILASTOT ============ -->
+<!-- TILASTOT -->
 <section id="view-stats" class="hide">
   <div class="card"><div class="statgrid">
     <div class="b"><div class="num" id="stT">0</div><div class="lab">treeniä</div></div>
-    <div class="b"><div class="num" id="stS">0</div><div class="lab">sarjaa</div></div>
+    <div class="b"><div class="num" id="stS">0</div><div class="lab">kirjausta</div></div>
     <div class="b"><div class="num" id="stV">0</div><div class="lab">kg volyymi</div></div>
   </div></div>
   <div class="card">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
       <h3 style="font-size:15px">Treenin yhteenveto</h3><button class="sm" id="copySess">⧉ Kopioi</button></div>
-    <select id="sessPick" style="margin-bottom:10px"></select>
-    <pre class="copyblock" id="sessText">–</pre>
+    <select id="sessPick" style="margin-bottom:10px"></select><pre class="copyblock" id="sessText">–</pre>
   </div>
   <div class="card">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
@@ -269,7 +285,7 @@
   </div>
 </section>
 
-<!-- ============ ASETUKSET ============ -->
+<!-- ASETUKSET -->
 <section id="view-set" class="hide">
   <div class="card"><h3 style="font-size:15px;margin-bottom:10px">Varmuuskopio</h3>
     <p class="muted" style="margin:0 0 12px">Vie data Files-appiin silloin tällöin.</p>
@@ -277,13 +293,25 @@
     <button class="ghost" id="importBtn">⤒ Tuo varmuuskopio</button>
     <button class="ghost" id="csvBtn">▤ Vie CSV (Numbers)</button>
     <input type="file" id="importFile" accept="application/json" class="hide"></div>
-  <div class="card"><p class="muted" style="margin:0 0 12px">Versio 3 · data vain tässä puhelimessa</p>
+  <div class="card"><p class="muted" style="margin:0 0 12px">Versio 4 · data vain tässä puhelimessa</p>
     <button class="ghost danger" id="wipeBtn">Tyhjennä kaikki data</button></div>
 </section>
 
+<!-- pieni lepotaimeri -->
 <div class="timer" id="timer">
   <div><div class="lbl" id="timerLbl">Lepo</div><span class="t" id="timerT">0:00</span></div>
   <div style="display:flex;gap:8px"><button id="timerPlus">+30s</button><button id="timerStop">OK</button></div>
+</div>
+
+<!-- KOKORUUDUN PITO-AJASTIN -->
+<div class="fs hide" id="fs">
+  <div class="fsphase" id="fsPhase">VALMISTAUDU</div>
+  <div class="fsnum" id="fsNum">10</div>
+  <div class="fssub" id="fsSub"></div>
+  <div class="fsact">
+    <button id="fsStop" class="hide">Lopetin / tipuin</button>
+    <button id="fsCancel" class="ghost">Peruuta</button>
+  </div>
 </div>
 
 <nav>
@@ -293,7 +321,6 @@
   <button data-v="stats"><span class="ic">📊</span>Tilastot</button>
   <button data-v="set"><span class="ic">⚙</span>Asetukset</button>
 </nav>
-
 <div class="toast" id="toast"></div>
 
 <script>
@@ -308,8 +335,7 @@ const fmtKg = n => (Math.round(n*10)/10).toString().replace(".",",");
 function load(){ try{ return JSON.parse(localStorage.getItem(KEY)); }catch(e){ return null; } }
 function save(){ localStorage.setItem(KEY, JSON.stringify(db)); }
 let db = load();
-if(!db) db = {exercises:[], sessions:[], sets:[], programs:[], activeSession:null, v:3};
-// v1 -> rakenne
+if(!db) db = {exercises:[],sessions:[],sets:[],programs:[],activeSession:null,v:4};
 if(!db.exercises){
   const old=db.sets||[];
   const exs=[...new Set(old.map(s=>s.ex))].map(name=>({id:uid(),name,type:'strength',targetSets:3,restSec:90,progKg:2.5,defKg:null}));
@@ -317,10 +343,9 @@ if(!db.exercises){
   const dates=[...new Set(old.map(s=>s.date))].sort();
   const sByDate={}; const sessions=dates.map(d=>{const id=uid();sByDate[d]=id;return {id,start:d+"T08:00:00.000Z",end:d+"T09:00:00.000Z"};});
   const sets=old.map(s=>({id:s.id||uid(),exId:byName[s.ex],exName:s.ex,kind:'strength',kg:s.kg,reps:s.reps,note:"",sessionId:sByDate[s.date],date:s.date,t:s.t||s.date+"T08:30:00.000Z"}));
-  db={exercises:exs,sessions,sets,programs:[],activeSession:null,v:3};
+  db={exercises:exs,sessions,sets,programs:[],activeSession:null,v:4};
   save();
 }
-// v2 -> v3 kentät
 db.exercises.forEach(e=>{ if(!e.type) e.type='strength'; });
 db.sets.forEach(s=>{ if(!s.kind) s.kind='strength'; });
 if(!db.programs) db.programs=[];
@@ -333,9 +358,9 @@ const progById=id=>db.programs.find(p=>p.id===id);
 const activeSess=()=>db.activeSession?sessById(db.activeSession):null;
 const setsOfSession=sid=>db.sets.filter(s=>s.sessionId===sid);
 const setsOfExInSession=(exId,sid)=>db.sets.filter(s=>s.exId===exId&&s.sessionId===sid);
-const strSets=arr=>arr.filter(s=>s.kind!=='cardio');
+const strSets=arr=>arr.filter(s=>s.kind==='strength');
 const carSets=arr=>arr.filter(s=>s.kind==='cardio');
-function volume(arr){ return strSets(arr).reduce((a,s)=>a+s.kg*s.reps,0); }
+function volume(arr){ return arr.filter(s=>s.kind==='strength'||s.kind==='carry').reduce((a,s)=>a+(s.kg||0)*(s.reps||1),0); }
 function reps(arr){ return strSets(arr).reduce((a,s)=>a+s.reps,0); }
 function hue(str){ let h=0; for(const c of str) h=(h*31+c.charCodeAt(0))%360; return h; }
 function fmtDur(ms){ const m=Math.max(0,Math.round(ms/60000)); return `${Math.floor(m/60)}:${String(m%60).padStart(2,'0')}`; }
@@ -344,9 +369,11 @@ function avInit(name){ return name.trim().slice(0,2).toUpperCase(); }
 function fmtFi(iso){ return new Date(iso).toLocaleDateString('fi-FI',{day:'numeric',month:'numeric'}); }
 function fmtFiLong(iso){ return new Date(iso).toLocaleDateString('fi-FI',{weekday:'long',day:'numeric',month:'long'}); }
 function paceStr(min,km){ if(!km) return "–"; const sec=Math.round(min*60/km); return `${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}`; }
-function carLine(s){ const p=[]; if(s.distKm) p.push(fmtKg(s.distKm)+" km");
-  if(s.durMin) p.push(fmtKg(s.durMin)+" min"); if(s.distKm&&s.durMin) p.push("tahti "+paceStr(s.durMin,s.distKm)+"/km");
-  if(s.hr) p.push("ka "+s.hr); return p.join(" · "); }
+function carLine(s){ const p=[]; if(s.distKm) p.push(fmtKg(s.distKm)+" km"); if(s.durMin) p.push(fmtKg(s.durMin)+" min");
+  if(s.distKm&&s.durMin) p.push("tahti "+paceStr(s.durMin,s.distKm)+"/km"); if(s.hr) p.push("ka "+s.hr); return p.join(" · "); }
+function holdLine(s){ return `${s.sec} s`; }
+function carryLine(s){ const p=[]; if(s.kg) p.push(fmtKg(s.kg)+" kg"); if(s.distM) p.push(s.distM+" m"); return p.join(" × "); }
+function lineFor(s){ return s.kind==='cardio'?carLine(s):s.kind==='hold'?holdLine(s):s.kind==='carry'?carryLine(s):`${fmtKg(s.kg)} kg × ${s.reps}`; }
 
 function lastExSession(exId){
   const sids=[...new Set(db.sets.filter(s=>s.exId===exId).map(s=>s.sessionId))].filter(id=>id!==db.activeSession);
@@ -354,7 +381,6 @@ function lastExSession(exId){
   if(!sorted.length) return null; const sess=sorted[sorted.length-1];
   return {sess, sets:setsOfExInSession(exId,sess.id)};
 }
-
 let toastTimer; function toast(m){ const t=$("#toast"); t.textContent=m; t.classList.add("show");
   clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove("show"),1600); }
 function vibe(p){ if(navigator.vibrate) navigator.vibrate(p); }
@@ -364,8 +390,7 @@ let curView="ex",curExId=null,editingId=null,feelSel="",editType="strength",pgId
 const VIEWS=["ex","detail","edit","prog","hist","pr","stats","set"];
 function show(v){ VIEWS.forEach(x=>$("#view-"+x).classList.toggle("hide",x!==v)); curView=v;
   document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.v===v));
-  if(v==="ex") renderGrid(); if(v==="hist") renderHistory();
-  if(v==="pr") renderPR(); if(v==="stats") renderStats();
+  if(v==="ex") renderGrid(); if(v==="hist") renderHistory(); if(v==="pr") renderPR(); if(v==="stats") renderStats();
 }
 document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>show(b.dataset.v));
 
@@ -374,288 +399,325 @@ let sessInt=null;
 function renderSessBar(){
   const a=activeSess(),bar=$("#sessbar"),btn=$("#sessBtn");
   $("#progCard").classList.toggle("hide",!!a);
-  if(a){ bar.classList.add("live");
-    $("#sessS1").textContent=a.programName?("Treeni: "+a.programName):"Treeni käynnissä";
-    btn.textContent="■ Lopeta"; btn.style.background="var(--bad)";
-    tickSess(); clearInterval(sessInt); sessInt=setInterval(tickSess,1000);
-  } else { bar.classList.remove("live");
-    $("#sessS1").textContent="Ei treeniä käynnissä"; $("#sessS2").textContent="Paina aloittaaksesi";
+  if(a){ bar.classList.add("live"); $("#sessS1").textContent=a.programName?("Treeni: "+a.programName):"Treeni käynnissä";
+    btn.textContent="■ Lopeta"; btn.style.background="var(--bad)"; tickSess(); clearInterval(sessInt); sessInt=setInterval(tickSess,1000);
+  } else { bar.classList.remove("live"); $("#sessS1").textContent="Ei treeniä käynnissä"; $("#sessS2").textContent="Paina aloittaaksesi";
     btn.textContent="▶ Aloita"; btn.style.background="var(--acc)"; clearInterval(sessInt); }
 }
 function tickSess(){ const a=activeSess(); if(!a) return; const s=setsOfSession(a.id);
   $("#sessS2").textContent=`${fmtDur(Date.now()-new Date(a.start).getTime())} · ${s.length} kirjausta · ${fmtKg(volume(s))} kg`; }
-function startSession(programId){
-  const p=programId?progById(programId):null;
-  const id=uid(); db.sessions.push({id,start:new Date().toISOString(),end:null,programId:programId||null,programName:p?p.name:null});
-  db.activeSession=id; save(); renderSessBar(); renderGrid();
-  toast(p?("Aloitettu: "+p.name):"Treeni aloitettu");
-}
-function endSession(){
-  const s=setsOfSession(db.activeSession);
-  if(s.length===0){ if(!confirm("Lopeta ilman kirjauksia? Treeni poistetaan.")) return;
-    db.sessions=db.sessions.filter(x=>x.id!==db.activeSession); }
+function startSession(programId){ const p=programId?progById(programId):null; const id=uid();
+  db.sessions.push({id,start:new Date().toISOString(),end:null,programId:programId||null,programName:p?p.name:null});
+  db.activeSession=id; save(); renderSessBar(); renderGrid(); toast(p?("Aloitettu: "+p.name):"Treeni aloitettu"); }
+function endSession(){ const s=setsOfSession(db.activeSession);
+  if(s.length===0){ if(!confirm("Lopeta ilman kirjauksia? Treeni poistetaan.")) return; db.sessions=db.sessions.filter(x=>x.id!==db.activeSession); }
   else { sessById(db.activeSession).end=new Date().toISOString(); toast("Treeni tallennettu 💪"); }
-  db.activeSession=null; save(); renderSessBar(); renderGrid(); refreshStreak();
-}
+  db.activeSession=null; save(); renderSessBar(); renderGrid(); refreshStreak(); }
 $("#sessBtn").onclick=()=>{ db.activeSession?endSession():startSession(null); };
 
-// ---------- programs list ----------
-function renderProgList(){
-  const box=$("#progList");
+// ---------- programs ----------
+function renderProgList(){ const box=$("#progList");
   if(!db.programs.length){ box.innerHTML='<div class="muted">Ei ohjelmia. Luo ensimmäinen — tai aloita vain vapaa treeni yltä.</div>'; return; }
   box.innerHTML=db.programs.map(p=>`<div class="progrow" data-id="${p.id}">
     <div><div class="pn">${esc(p.name)}</div><div class="pm">${p.exIds.length} liikettä</div></div>
-    <button class="sm ghost editp" data-id="${p.id}">✎</button>
-    <button class="sm startp" data-id="${p.id}">▶</button></div>`).join("");
+    <button class="sm ghost editp" data-id="${p.id}">✎</button><button class="sm startp" data-id="${p.id}">▶</button></div>`).join("");
   box.querySelectorAll(".startp").forEach(b=>b.onclick=()=>startSession(b.dataset.id));
   box.querySelectorAll(".editp").forEach(b=>b.onclick=()=>openProg(b.dataset.id));
 }
 
 // ---------- grid ----------
+function tileMeta(e){
+  if(e.type==='cardio') return {ic:'🏃',cfg:'🏃 kestävyys',col:`hsl(${hue(e.name)} 70% 50%)`};
+  if(e.type==='hold')   return {ic:'⏱',cfg:`⏱ pito · ${e.holdSec||0}s · ${e.targetSets}×`,col:`hsl(${hue(e.name)} 55% 48%)`};
+  if(e.type==='carry')  return {ic:'🧳',cfg:`🧳 kanto${e.defKg?' · '+fmtKg(e.defKg)+'kg':''}`,col:`hsl(${hue(e.name)} 45% 46%)`};
+  return {ic:esc(avInit(e.name)),cfg:`${e.targetSets}×sarja · lepo ${fmtMMSS(e.restSec)} · +${fmtKg(e.progKg)}kg`,col:`hsl(${hue(e.name)} 60% 45%)`};
+}
 function renderGrid(){
   const g=$("#exGrid"),a=activeSess();
   let list=db.exercises.slice().sort((x,y)=>x.name.localeCompare(y.name,'fi'));
   if(a&&a.programId){ const p=progById(a.programId);
     if(p){ const order=Object.fromEntries(p.exIds.map((id,i)=>[id,i]));
-      list.sort((x,y)=>{ const ax=x.id in order, ay=y.id in order;
-        if(ax&&ay) return order[x.id]-order[y.id]; if(ax) return -1; if(ay) return 1;
-        return x.name.localeCompare(y.name,'fi'); }); } }
-  const tiles=list.map(e=>{
-    const done=a?setsOfExInSession(e.id,a.id).length:0;
-    const isC=e.type==='cardio';
-    const cfg=isC?`🏃 kestävyys`:`${e.targetSets}×sarja · lepo ${fmtMMSS(e.restSec)} · +${fmtKg(e.progKg)}kg`;
-    const doneTag=(a&&done>0)?`<span class="done">${isC?(done+"✓"):(done+"/"+e.targetSets+" ✓")}</span>`:"";
-    const col=isC?`hsl(${hue(e.name)} 70% 50%)`:`hsl(${hue(e.name)} 60% 45%)`;
-    return `<div class="extile ${isC?'cardio':''}" data-id="${e.id}">
-      <div class="av" style="background:${col}">${isC?'🏃':esc(avInit(e.name))}</div>
-      <div class="nm">${esc(e.name)}</div><div class="cfg">${cfg}</div>${doneTag}</div>`;
-  }).join("");
+      list.sort((x,y)=>{ const ax=x.id in order,ay=y.id in order;
+        if(ax&&ay) return order[x.id]-order[y.id]; if(ax) return -1; if(ay) return 1; return x.name.localeCompare(y.name,'fi'); }); } }
+  const tiles=list.map(e=>{ const done=a?setsOfExInSession(e.id,a.id).length:0; const m=tileMeta(e);
+    const tgt=(e.type==='cardio')?(done+"✓"):(done+"/"+(e.targetSets||1)+" ✓");
+    const doneTag=(a&&done>0)?`<span class="done">${tgt}</span>`:"";
+    return `<div class="extile" data-id="${e.id}"><div class="av" style="background:${m.col}">${m.ic}</div>
+      <div class="nm">${esc(e.name)}</div><div class="cfg">${m.cfg}</div>${doneTag}</div>`; }).join("");
   g.innerHTML=tiles+`<div class="extile add" id="addEx">＋ Uusi liike</div>`;
   g.querySelectorAll(".extile[data-id]").forEach(t=>t.onclick=()=>openDetail(t.dataset.id));
-  $("#addEx").onclick=()=>openEdit(null);
-  renderProgList();
+  $("#addEx").onclick=()=>openEdit(null); renderProgList();
 }
 
-// ---------- detail / log ----------
+// ---------- detail ----------
 function openDetail(exId){
-  curExId=exId; const e=exById(exId); if(!e) return;
-  const isC=e.type==='cardio';
+  curExId=exId; const e=exById(exId); if(!e) return; const ty=e.type;
   $("#detName").textContent=e.name;
-  $("#detCfg").innerHTML = isC
-    ? `<span class="chip">🏃 Kestävyys</span>`
-    : `<span class="chip">🎯 ${e.targetSets} sarjaa</span><span class="chip">⏱ lepo ${fmtMMSS(e.restSec)}</span><span class="chip">📈 +${fmtKg(e.progKg)} kg</span>`;
-  $("#strInputs").classList.toggle("hide",isC);
-  $("#cardioInputs").classList.toggle("hide",!isC);
-  $("#addSet").textContent = isC?"+ Kirjaa suoritus":"+ Kirjaa sarja";
+  $("#detCfg").innerHTML =
+    ty==='cardio'?`<span class="chip">🏃 Kestävyys</span>`:
+    ty==='hold'?`<span class="chip">🎯 ${e.targetSets} toistoa</span><span class="chip">⏱ tavoite ${e.holdSec}s</span><span class="chip">📈 +${e.progSec||0}s</span>`:
+    ty==='carry'?`<span class="chip">🎯 ${e.targetSets} toistoa</span>${e.defM?`<span class="chip">📏 ${e.defM} m</span>`:""}<span class="chip">📈 +${fmtKg(e.progKg||0)} kg</span>`:
+    `<span class="chip">🎯 ${e.targetSets} sarjaa</span><span class="chip">⏱ lepo ${fmtMMSS(e.restSec)}</span><span class="chip">📈 +${fmtKg(e.progKg)} kg</span>`;
+  $("#strInputs").classList.toggle("hide",ty!=='strength');
+  $("#cardioInputs").classList.toggle("hide",ty!=='cardio');
+  $("#holdInputs").classList.toggle("hide",ty!=='hold');
+  $("#carryInputs").classList.toggle("hide",ty!=='carry');
+  $("#addSet").classList.toggle("hide",ty==='hold'); // pito kirjataan ajastimella (käsinkirjaus omalla napilla alla)
+  $("#addSet").textContent = ty==='cardio'?"+ Kirjaa suoritus":ty==='carry'?"+ Kirjaa kanto":"+ Kirjaa sarja";
   // edellinen kerta
   const last=lastExSession(exId);
+  ["#inKg","#inReps","#inDist","#inDur","#inHr","#inSec","#inCkg","#inCdist","#inNote"].forEach(s=>$(s).value="");
   if(last&&last.sets.length){
-    if(isC){ const s=last.sets[last.sets.length-1];
-      $("#detLast").textContent=`Edellinen (${fmtFi(last.sess.start)}): ${carLine(s)}`;
-      $("#inDist").placeholder=s.distKm?fmtKg(s.distKm):"0"; $("#inDur").placeholder=s.durMin?fmtKg(s.durMin):"0";
-      $("#inHr").placeholder=s.hr||"";
-    } else { const txt=last.sets.map(s=>`${fmtKg(s.kg)}×${s.reps}`).join("  ");
-      $("#detLast").textContent=`Edellinen (${fmtFi(last.sess.start)}): ${txt}`;
-      const top=Math.max(...last.sets.map(s=>s.kg));
-      $("#inKg").placeholder=fmtKg(top+e.progKg)+" (ehdotus)"; $("#inReps").placeholder=last.sets[last.sets.length-1].reps; }
+    const ls=last.sets, prev=ls[ls.length-1];
+    $("#detLast").textContent=`Edellinen (${fmtFi(last.sess.start)}): ${ls.map(lineFor).join("  ")}`;
+    if(ty==='strength'){ const top=Math.max(...ls.map(s=>s.kg));
+      $("#inKg").placeholder=fmtKg(top+e.progKg)+" (ehdotus)"; $("#inReps").placeholder=prev.reps; }
+    else if(ty==='cardio'){ $("#inDist").placeholder=prev.distKm?fmtKg(prev.distKm):"0"; $("#inDur").placeholder=prev.durMin?fmtKg(prev.durMin):"0"; $("#inHr").placeholder=prev.hr||""; }
+    else if(ty==='hold'){ $("#inSec").placeholder=e.holdSec; }
+    else if(ty==='carry'){ const top=Math.max(...ls.map(s=>s.kg||0));
+      $("#inCkg").placeholder=fmtKg(top+(e.progKg||0))+" (ehdotus)"; $("#inCdist").placeholder=prev.distM||e.defM||"0"; }
   } else { $("#detLast").textContent="Ensimmäinen kerta — hyvä!";
-    if(!isC){ $("#inKg").placeholder=e.defKg!=null?fmtKg(e.defKg):"0"; $("#inReps").placeholder="0"; } }
-  ["#inKg","#inReps","#inDist","#inDur","#inHr","#inNote"].forEach(s=>$(s).value=""); setFeel("");
+    if(ty==='strength') $("#inKg").placeholder=e.defKg!=null?fmtKg(e.defKg):"0";
+    if(ty==='hold') $("#inSec").placeholder=e.holdSec;
+    if(ty==='carry'){ $("#inCkg").placeholder=e.defKg!=null?fmtKg(e.defKg):"0"; $("#inCdist").placeholder=e.defM||"0"; } }
+  setFeel("");
+  if(ty==='hold') $("#fsStart").textContent=`▶ Aloita pito · tavoite ${e.holdSec}s`;
   $("#logCard").classList.toggle("hide",!db.activeSession);
-  $("#setsHdr").textContent=db.activeSession?(isC?"Suoritukset tässä treenissä":"Sarjat tässä treenissä"):"Aloita treeni kirjataksesi";
+  $("#setsHdr").textContent=db.activeSession?"Kirjaukset tässä treenissä":"Aloita treeni kirjataksesi";
   renderDetailSets(); renderExHist(); show("detail");
 }
 function renderDetailSets(){
-  const box=$("#setsList"),e=exById(curExId),isC=e.type==='cardio';
+  const box=$("#setsList"),e=exById(curExId);
   if(!db.activeSession){ box.innerHTML='<div class="muted">Aloita treeni (Liikkeet-välilehti) kirjataksesi.</div>'; $("#prog").textContent=""; return; }
   const sets=setsOfExInSession(curExId,db.activeSession);
   box.innerHTML=sets.length?sets.map((s,i)=>`<div class="setline"><span class="n">${i+1}</span>
-    <span class="v">${isC?carLine(s):`${fmtKg(s.kg)} kg × ${s.reps}`}${s.note?` <small>· ${esc(s.note)}</small>`:""}</span>
-    <span class="x" data-id="${s.id}">✕</span></div>`).join(""):'<div class="muted">Ei vielä kirjauksia.</div>';
-  box.querySelectorAll(".x").forEach(b=>b.onclick=()=>{ db.sets=db.sets.filter(s=>s.id!==b.dataset.id);
-    save(); renderDetailSets(); renderGrid(); tickSess(); });
-  if(isC){ $("#prog").textContent=sets.length?`${sets.length} suoritusta kirjattu`:""; }
-  else { const d=sets.length; $("#prog").textContent=d>=e.targetSets?`✓ Tavoite täynnä (${d}/${e.targetSets})`:`Sarja ${d+1}/${e.targetSets}`; }
+    <span class="v">${lineFor(s)}${s.note?` <small>· ${esc(s.note)}</small>`:""}</span><span class="x" data-id="${s.id}">✕</span></div>`).join("")
+    :'<div class="muted">Ei vielä kirjauksia.</div>';
+  box.querySelectorAll(".x").forEach(b=>b.onclick=()=>{ db.sets=db.sets.filter(s=>s.id!==b.dataset.id); save(); renderDetailSets(); renderGrid(); tickSess(); });
+  const d=sets.length;
+  $("#prog").textContent = e.type==='cardio' ? (d?`${d} suoritusta`:"") :
+    (d>=(e.targetSets||1)?`✓ Tavoite täynnä (${d}/${e.targetSets})`:`Seuraava: ${d+1}/${e.targetSets}`);
 }
 function renderExHist(){
-  const box=$("#exHist"),e=exById(curExId),isC=e.type==='cardio';
+  const box=$("#exHist");
   const sids=[...new Set(db.sets.filter(s=>s.exId===curExId).map(s=>s.sessionId))].filter(id=>id!==db.activeSession)
     .map(sessById).filter(Boolean).sort((a,b)=>b.start.localeCompare(a.start)).slice(0,8);
   if(!sids.length){ box.innerHTML='<div class="muted">Ei aiempaa historiaa.</div>'; return; }
   box.innerHTML=sids.map(se=>{ const ss=setsOfExInSession(curExId,se.id);
-    const body=isC?ss.map(carLine).join("<br>"):`${ss.map(s=>`${fmtKg(s.kg)}×${s.reps}`).join(" · ")} &nbsp;(${reps(ss)} t, ${fmtKg(volume(ss))} kg)`;
-    return `<div class="ex"><div class="nm">${fmtFi(se.start)}</div><div class="sets">${body}</div></div>`; }).join("");
+    return `<div class="ex"><div class="nm">${fmtFi(se.start)}</div><div class="sets">${ss.map(lineFor).join(" · ")}</div></div>`; }).join("");
 }
 $("#feel").querySelectorAll(".f").forEach(f=>f.onclick=()=>setFeel(feelSel===f.dataset.v?"":f.dataset.v));
 function setFeel(v){ feelSel=v; $("#feel").querySelectorAll(".f").forEach(f=>f.classList.toggle("on",f.dataset.v===v)); }
+function curNote(){ return [feelSel,$("#inNote").value.trim()].filter(Boolean).join(" — "); }
 
 $("#addSet").onclick=()=>{
   if(!db.activeSession){ toast("Aloita treeni ensin"); return; }
-  const e=exById(curExId),isC=e.type==='cardio';
-  const note=[feelSel,$("#inNote").value.trim()].filter(Boolean).join(" — ");
-  if(isC){
+  const e=exById(curExId),ty=e.type,note=curNote();
+  if(ty==='cardio'){
     let dist=parseFloat($("#inDist").value); let dur=parseFloat($("#inDur").value); let hr=parseInt($("#inHr").value,10);
     if(isNaN(dist)){ const p=parseFloat($("#inDist").placeholder); if(!isNaN(p)) dist=p; }
     if(isNaN(dur)){ const p=parseFloat($("#inDur").placeholder); if(!isNaN(p)) dur=p; }
     if((isNaN(dist)||dist<=0)&&(isNaN(dur)||dur<=0)){ $("#inDur").focus(); toast("Anna matka tai aika"); return; }
-    db.sets.push({id:uid(),exId:e.id,exName:e.name,kind:'cardio',distKm:isNaN(dist)?0:dist,durMin:isNaN(dur)?0:dur,hr:isNaN(hr)?null:hr,note,sessionId:db.activeSession,date:todayStr(),t:new Date().toISOString()});
-    save(); vibe(15); ["#inDist","#inDur","#inHr","#inNote"].forEach(s=>$(s).value=""); setFeel("");
-    renderDetailSets(); renderExHist(); tickSess();
+    pushSet({kind:'cardio',distKm:isNaN(dist)?0:dist,durMin:isNaN(dur)?0:dur,hr:isNaN(hr)?null:hr,note});
+    ["#inDist","#inDur","#inHr","#inNote"].forEach(s=>$(s).value="");
+  } else if(ty==='hold'){
+    let sec=parseInt($("#inSec").value,10); if(isNaN(sec)){ const p=parseInt($("#inSec").placeholder,10); if(!isNaN(p)) sec=p; }
+    if(isNaN(sec)||sec<=0){ $("#inSec").focus(); toast("Anna sekunnit"); return; }
+    pushSet({kind:'hold',sec,note}); $("#inSec").value=""; $("#inNote").value=""; startRest(e.restSec,e.name);
+  } else if(ty==='carry'){
+    let kg=parseFloat($("#inCkg").value); let dm=parseFloat($("#inCdist").value);
+    if(isNaN(kg)){ const p=parseFloat($("#inCkg").placeholder); if(!isNaN(p)) kg=p; }
+    if(isNaN(dm)){ const p=parseFloat($("#inCdist").placeholder); if(!isNaN(p)) dm=p; }
+    if(isNaN(kg)||kg<=0){ $("#inCkg").focus(); toast("Anna paino"); return; }
+    pushSet({kind:'carry',kg,distM:isNaN(dm)?0:dm,reps:1,note}); ["#inCkg","#inCdist","#inNote"].forEach(s=>$(s).value=""); startRest(e.restSec,e.name);
   } else {
     let kg=parseFloat($("#inKg").value); let rp=parseInt($("#inReps").value,10);
     if(isNaN(kg)){ const p=parseFloat($("#inKg").placeholder); if(!isNaN(p)) kg=p; }
     if(isNaN(rp)){ const p=parseInt($("#inReps").placeholder,10); if(!isNaN(p)) rp=p; }
     if(isNaN(kg)||isNaN(rp)||rp<=0){ $("#inKg").focus(); toast("Anna paino ja toistot"); return; }
-    db.sets.push({id:uid(),exId:e.id,exName:e.name,kind:'strength',kg,reps:rp,note,sessionId:db.activeSession,date:todayStr(),t:new Date().toISOString()});
-    save(); vibe(15); ["#inKg","#inReps","#inNote"].forEach(s=>$(s).value=""); setFeel("");
-    renderDetailSets(); renderExHist(); tickSess(); startRest(e.restSec,e.name);
+    pushSet({kind:'strength',kg,reps:rp,note}); ["#inKg","#inReps","#inNote"].forEach(s=>$(s).value=""); startRest(e.restSec,e.name);
   }
+  setFeel("");
 };
+function pushSet(extra){ const e=exById(curExId);
+  db.sets.push(Object.assign({id:uid(),exId:e.id,exName:e.name,sessionId:db.activeSession,date:todayStr(),t:new Date().toISOString()},extra));
+  save(); vibe(15); renderDetailSets(); renderExHist(); tickSess(); }
 $("#detBack").onclick=()=>show("ex");
 $("#detEdit").onclick=()=>openEdit(curExId);
 
+// ---------- FULL SCREEN HOLD TIMER ----------
+let audioCtx=null;
+function beep(freq,dur,vol){ try{ if(!audioCtx) return; const o=audioCtx.createOscillator(),g=audioCtx.createGain();
+  o.frequency.value=freq; o.type='sine'; o.connect(g); g.connect(audioCtx.destination);
+  g.gain.setValueAtTime(vol||0.4,audioCtx.currentTime); o.start();
+  g.gain.exponentialRampToValueAtTime(0.0001,audioCtx.currentTime+(dur||0.12)); o.stop(audioCtx.currentTime+(dur||0.12)); }catch(e){} }
+let wakeLock=null;
+async function reqWake(){ try{ if(navigator.wakeLock) wakeLock=await navigator.wakeLock.request('screen'); }catch(e){} }
+function relWake(){ try{ wakeLock&&wakeLock.release&&wakeLock.release(); }catch(e){} wakeLock=null; }
+
+let fsState=null;
+$("#fsStart").onclick=()=>{ if(!db.activeSession){ toast("Aloita treeni ensin"); return; }
+  const e=exById(curExId); if(!e||e.type!=='hold') return;
+  try{ audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)(); if(audioCtx.state==='suspended') audioCtx.resume(); }catch(_){}
+  startHold(e); };
+function startHold(e){
+  const go=/roik|hang|dead/i.test(e.name)?'ROIKU!':'PIDÄ!';
+  fsState={phase:'prep',remain:10,holdSec:e.holdSec||30,e,go,int:null};
+  reqWake();
+  $("#fs").classList.remove("hide"); $("#fsStop").classList.add("hide"); $("#fsSub").textContent=`tavoite ${e.holdSec}s`;
+  paintFs(); fsState.int=setInterval(tickFs,1000);
+}
+function paintFs(){ const st=fsState; if(!st) return;
+  if(st.phase==='prep'){ $("#fsPhase").textContent="VALMISTAUDU"; $("#fsNum").textContent=st.remain; $("#fsNum").style.color="var(--acc)"; }
+  else if(st.phase==='hang'){ $("#fsPhase").textContent=st.go; $("#fsNum").textContent=st.remain;
+    $("#fsNum").style.color=st.remain<=5?"var(--warn)":"var(--good)"; $("#fsStop").classList.remove("hide"); $("#fsSub").textContent="pidä!"; }
+}
+function tickFs(){ const st=fsState; if(!st) return;
+  if(st.phase==='prep'){ st.remain--;
+    if(st.remain<=0){ st.phase='hang'; st.remain=st.holdSec; beep(1320,0.3,0.6); paintFs(); return; }
+    beep(700,0.08,0.35); paintFs();
+  } else if(st.phase==='hang'){ st.remain--;
+    if(st.remain<=0){ finishHold(st.holdSec); return; }
+    if(st.remain<=5) beep(760,0.08,0.45); paintFs(); }
+}
+function finishHold(sec){ const st=fsState; clearInterval(st.int); beep(1320,0.6,0.6);
+  logHoldSet(st.e,sec); $("#fsPhase").textContent="VALMIS 💪"; $("#fsNum").textContent="0"; $("#fsNum").style.color="var(--good)";
+  $("#fsStop").classList.add("hide"); $("#fsSub").textContent=`kirjattu ${sec}s`; setTimeout(closeFs,1700); }
+$("#fsStop").onclick=()=>{ const st=fsState; if(!st||st.phase!=='hang') return; const held=st.holdSec-st.remain;
+  clearInterval(st.int); beep(440,0.35,0.5); logHoldSet(st.e,held);
+  $("#fsPhase").textContent="Kirjattu"; $("#fsNum").textContent=held; $("#fsSub").textContent=`${held}s`; $("#fsStop").classList.add("hide"); setTimeout(closeFs,1400); };
+$("#fsCancel").onclick=()=>{ if(fsState) clearInterval(fsState.int); $("#fs").classList.add("hide"); relWake(); fsState=null; };
+function closeFs(){ if(fsState) clearInterval(fsState.int); $("#fs").classList.add("hide"); relWake(); const e=fsState?fsState.e:exById(curExId); fsState=null;
+  renderDetailSets(); renderExHist(); renderGrid(); tickSess(); if(e) startRest(e.restSec,e.name); }
+function logHoldSet(e,sec){ db.sets.push({id:uid(),exId:e.id,exName:e.name,kind:'hold',sec,note:curNote(),sessionId:db.activeSession,date:todayStr(),t:new Date().toISOString()});
+  save(); $("#inNote").value=""; setFeel(""); }
+
 // ---------- exercise editor ----------
-function buildRestOptions(){ let o=""; for(let s=30;s<=300;s+=15) o+=`<option value="${s}">${fmtMMSS(s)}</option>`; $("#edRest").innerHTML=o; }
+function fillRest(sel,val){ let o=""; for(let s=30;s<=300;s+=15) o+=`<option value="${s}">${fmtMMSS(s)}</option>`; sel.innerHTML=o; sel.value=val||90; }
 function setEditType(t){ editType=t; $("#edType").querySelectorAll(".f").forEach(f=>f.classList.toggle("on",f.dataset.v===t));
-  const car=t==='cardio'; $("#edStrengthFields").classList.toggle("hide",car);
-  $("#edNameLbl").textContent=car?"Laji":"Liikkeen nimi";
+  $("#edStrengthFields").classList.toggle("hide",t!=='strength');
+  $("#edHoldFields").classList.toggle("hide",t!=='hold');
+  $("#edCarryFields").classList.toggle("hide",t!=='carry');
+  const car=t==='cardio';
+  $("#edNameLbl").textContent = car?"Laji":t==='hold'?"Liikkeen nimi (esim. Dead hang)":t==='carry'?"Liikkeen nimi (esim. Farmers carry)":"Liikkeen nimi";
   if(car){ $("#edName").setAttribute("list","sportlist"); $("#edName").placeholder="Valitse laji (esim. Soutu)"; }
-  else { $("#edName").removeAttribute("list"); $("#edName").placeholder="esim. Kyykky"; } }
+  else { $("#edName").removeAttribute("list"); $("#edName").placeholder = t==='hold'?"esim. Dead hang":t==='carry'?"esim. Farmers carry":"esim. Kyykky"; }
+}
 $("#edType").querySelectorAll(".f").forEach(f=>f.onclick=()=>setEditType(f.dataset.v));
 function openEdit(exId){
-  editingId=exId; buildRestOptions();
-  if(exId){ const e=exById(exId); $("#edTitle").textContent="Muokkaa liikettä";
-    setEditType(e.type||'strength'); $("#edName").value=e.name; $("#edSets").value=e.targetSets;
-    $("#edProg").value=e.progKg; $("#edRest").value=e.restSec; $("#edDefKg").value=e.defKg??"";
+  editingId=exId; fillRest($("#edRest"),90); fillRest($("#edHoldRest"),60); fillRest($("#edCrest"),120);
+  if(exId){ const e=exById(exId); $("#edTitle").textContent="Muokkaa liikettä"; setEditType(e.type||'strength'); $("#edName").value=e.name;
+    $("#edSets").value=e.targetSets||3; $("#edProg").value=e.progKg??2.5; fillRest($("#edRest"),e.restSec); $("#edDefKg").value=e.defKg??"";
+    $("#edHoldSec").value=e.holdSec??50; $("#edHoldSets").value=e.targetSets||3; fillRest($("#edHoldRest"),e.restSec); $("#edHoldProg").value=e.progSec??5;
+    $("#edCkg").value=e.defKg??""; $("#edCdist").value=e.defM??""; $("#edCsets").value=e.targetSets||3; $("#edCprog").value=e.progKg??2.5; fillRest($("#edCrest"),e.restSec);
     $("#edDelete").classList.remove("hide");
-  } else { $("#edTitle").textContent="Uusi liike"; setEditType('strength');
-    $("#edName").value=""; $("#edSets").value=3; $("#edProg").value=2.5; $("#edRest").value=90;
-    $("#edDefKg").value=""; $("#edDelete").classList.add("hide"); }
+  } else { $("#edTitle").textContent="Uusi liike"; setEditType('strength'); $("#edName").value="";
+    $("#edSets").value=3; $("#edProg").value=2.5; fillRest($("#edRest"),90); $("#edDefKg").value="";
+    $("#edHoldSec").value=50; $("#edHoldSets").value=3; fillRest($("#edHoldRest"),60); $("#edHoldProg").value=5;
+    $("#edCkg").value=""; $("#edCdist").value=""; $("#edCsets").value=3; $("#edCprog").value=2.5; fillRest($("#edCrest"),120);
+    $("#edDelete").classList.add("hide"); }
   show("edit");
 }
 $("#edSave").onclick=()=>{
   const name=$("#edName").value.trim(); if(!name){ $("#edName").focus(); return; }
-  const data={name,type:editType,
-    targetSets:Math.max(1,parseInt($("#edSets").value,10)||1),
-    progKg:parseFloat($("#edProg").value)||0, restSec:parseInt($("#edRest").value,10)||90,
-    defKg:$("#edDefKg").value===""?null:parseFloat($("#edDefKg").value)};
-  if(editingId){ const e=exById(editingId); Object.assign(e,data);
-    db.sets.filter(s=>s.exId===editingId).forEach(s=>s.exName=name); save(); openDetail(editingId);
-  } else { const e={id:uid(),...data}; db.exercises.push(e); save(); toast("Liike lisätty");
-    if(db.activeSession) openDetail(e.id); else show("ex"); }
+  let data={name,type:editType};
+  if(editType==='strength') data=Object.assign(data,{targetSets:Math.max(1,parseInt($("#edSets").value,10)||1),progKg:parseFloat($("#edProg").value)||0,restSec:parseInt($("#edRest").value,10)||90,defKg:$("#edDefKg").value===""?null:parseFloat($("#edDefKg").value)});
+  else if(editType==='cardio') data=Object.assign(data,{targetSets:1,restSec:60});
+  else if(editType==='hold') data=Object.assign(data,{targetSets:Math.max(1,parseInt($("#edHoldSets").value,10)||1),holdSec:Math.max(1,parseInt($("#edHoldSec").value,10)||30),progSec:parseInt($("#edHoldProg").value,10)||0,restSec:parseInt($("#edHoldRest").value,10)||60});
+  else if(editType==='carry') data=Object.assign(data,{targetSets:Math.max(1,parseInt($("#edCsets").value,10)||1),defKg:$("#edCkg").value===""?null:parseFloat($("#edCkg").value),defM:$("#edCdist").value===""?null:parseInt($("#edCdist").value,10),progKg:parseFloat($("#edCprog").value)||0,restSec:parseInt($("#edCrest").value,10)||120});
+  if(editingId){ const e=exById(editingId); Object.assign(e,data); db.sets.filter(s=>s.exId===editingId).forEach(s=>s.exName=name); save(); openDetail(editingId); }
+  else { const e={id:uid(),...data}; db.exercises.push(e); save(); toast("Liike lisätty"); if(db.activeSession) openDetail(e.id); else show("ex"); }
 };
-$("#edDelete").onclick=()=>{ if(!editingId) return; const e=exById(editingId);
-  const cnt=db.sets.filter(s=>s.exId===editingId).length;
+$("#edDelete").onclick=()=>{ if(!editingId) return; const e=exById(editingId); const cnt=db.sets.filter(s=>s.exId===editingId).length;
   if(!confirm(`Poistetaanko "${e.name}"?${cnt?` ${cnt} kirjausta säilyy historiassa.`:""}`)) return;
-  db.exercises=db.exercises.filter(x=>x.id!==editingId);
-  db.programs.forEach(p=>p.exIds=p.exIds.filter(id=>id!==editingId)); save(); show("ex"); };
+  db.exercises=db.exercises.filter(x=>x.id!==editingId); db.programs.forEach(p=>p.exIds=p.exIds.filter(id=>id!==editingId)); save(); show("ex"); };
 $("#edBack").onclick=()=>{ editingId&&exById(editingId)?openDetail(editingId):show("ex"); };
 
 // ---------- program editor ----------
 $("#newProg").onclick=()=>openProg(null);
-function openProg(id){
-  pgId=id;
-  if(id){ const p=progById(id); $("#pgTitle").textContent="Muokkaa ohjelmaa"; $("#pgName").value=p.name;
-    pgSel=p.exIds.slice(); $("#pgDelete").classList.remove("hide");
-  } else { $("#pgTitle").textContent="Uusi ohjelma"; $("#pgName").value=""; pgSel=[]; $("#pgDelete").classList.add("hide"); }
-  renderPgPick(); show("prog");
-}
-function renderPgPick(){
-  const box=$("#pgPick");
-  const list=db.exercises.slice().sort((a,b)=>a.name.localeCompare(b.name,'fi'));
-  if(!list.length){ box.innerHTML='<div class="muted">Luo ensin liikkeitä Liikkeet-välilehdellä.</div>'; return; }
-  box.innerHTML=list.map(e=>{ const i=pgSel.indexOf(e.id); const on=i>=0;
-    return `<div class="setline tap" data-id="${e.id}">
-      <span class="n ${on?'':'off'}">${on?i+1:''}</span>
-      <span class="v">${esc(e.name)} <small>· ${e.type==='cardio'?'kestävyys':'voima'}</small></span>
-      <span class="x">${on?'✓':'+'}</span></div>`; }).join("");
-  box.querySelectorAll(".setline").forEach(r=>r.onclick=()=>{ const id=r.dataset.id; const i=pgSel.indexOf(id);
-    if(i>=0) pgSel.splice(i,1); else pgSel.push(id); renderPgPick(); });
+function openProg(id){ pgId=id;
+  if(id){ const p=progById(id); $("#pgTitle").textContent="Muokkaa ohjelmaa"; $("#pgName").value=p.name; pgSel=p.exIds.slice(); $("#pgDelete").classList.remove("hide"); }
+  else { $("#pgTitle").textContent="Uusi ohjelma"; $("#pgName").value=""; pgSel=[]; $("#pgDelete").classList.add("hide"); }
+  renderPgPick(); show("prog"); }
+function renderPgPick(){ const box=$("#pgPick"); const list=db.exercises.slice().sort((a,b)=>a.name.localeCompare(b.name,'fi'));
+  if(!list.length){ box.innerHTML='<div class="muted">Luo ensin liikkeitä.</div>'; return; }
+  const tnames={strength:'voima',cardio:'kestävyys',hold:'pito',carry:'kanto'};
+  box.innerHTML=list.map(e=>{ const i=pgSel.indexOf(e.id),on=i>=0;
+    return `<div class="setline tap" data-id="${e.id}"><span class="n ${on?'':'off'}">${on?i+1:''}</span>
+      <span class="v">${esc(e.name)} <small>· ${tnames[e.type]||''}</small></span><span class="x">${on?'✓':'+'}</span></div>`; }).join("");
+  box.querySelectorAll(".setline").forEach(r=>r.onclick=()=>{ const id=r.dataset.id,i=pgSel.indexOf(id); if(i>=0) pgSel.splice(i,1); else pgSel.push(id); renderPgPick(); });
 }
 $("#pgSave").onclick=()=>{ const name=$("#pgName").value.trim(); if(!name){ $("#pgName").focus(); return; }
   if(!pgSel.length){ toast("Valitse vähintään yksi liike"); return; }
-  if(pgId){ const p=progById(pgId); p.name=name; p.exIds=pgSel.slice(); }
-  else db.programs.push({id:uid(),name,exIds:pgSel.slice()});
+  if(pgId){ const p=progById(pgId); p.name=name; p.exIds=pgSel.slice(); } else db.programs.push({id:uid(),name,exIds:pgSel.slice()});
   save(); toast("Ohjelma tallennettu"); show("ex"); };
-$("#pgDelete").onclick=()=>{ if(!pgId) return; if(!confirm("Poistetaanko ohjelma?")) return;
-  db.programs=db.programs.filter(p=>p.id!==pgId); save(); show("ex"); };
+$("#pgDelete").onclick=()=>{ if(!pgId) return; if(!confirm("Poistetaanko ohjelma?")) return; db.programs=db.programs.filter(p=>p.id!==pgId); save(); show("ex"); };
 $("#pgBack").onclick=()=>show("ex");
 
 // ---------- rest timer ----------
 let restRemain=0,restInt=null;
-function startRest(sec,label){ clearInterval(restInt); restRemain=sec;
-  $("#timerLbl").textContent="Lepo · "+(label||""); $("#timer").classList.add("show"); paintRest();
-  restInt=setInterval(()=>{ restRemain--; paintRest(); if(restRemain<=0){ clearInterval(restInt);
-    vibe([200,100,200]); $("#timerLbl").textContent="Valmis! 💪"; setTimeout(()=>$("#timer").classList.remove("show"),1800); } },1000); }
-function paintRest(){ const m=Math.floor(Math.max(0,restRemain)/60),s=Math.max(0,restRemain)%60;
-  $("#timerT").textContent=`${m}:${String(s).padStart(2,'0')}`; }
+function startRest(sec,label){ if(!sec) return; clearInterval(restInt); restRemain=sec; $("#timerLbl").textContent="Lepo · "+(label||"");
+  $("#timer").classList.add("show"); paintRest(); restInt=setInterval(()=>{ restRemain--; paintRest();
+    if(restRemain<=0){ clearInterval(restInt); beep&&beep(880,0.3,0.4); $("#timerLbl").textContent="Valmis! 💪"; setTimeout(()=>$("#timer").classList.remove("show"),1800); } },1000); }
+function paintRest(){ const m=Math.floor(Math.max(0,restRemain)/60),s=Math.max(0,restRemain)%60; $("#timerT").textContent=`${m}:${String(s).padStart(2,'0')}`; }
 $("#timerStop").onclick=()=>{ clearInterval(restInt); $("#timer").classList.remove("show"); };
 $("#timerPlus").onclick=()=>{ restRemain+=30; paintRest(); };
 
 // ---------- history ----------
-function renderHistory(){
-  const box=$("#histList");
+function renderHistory(){ const box=$("#histList");
   const done=db.sessions.filter(s=>setsOfSession(s.id).length).sort((a,b)=>b.start.localeCompare(a.start));
   if(!done.length){ box.innerHTML='<div class="empty">Ei vielä treenejä.<br>Liikkeet → Aloita treeni!</div>'; return; }
-  box.innerHTML=done.map(se=>{ const ss=setsOfSession(se.id);
-    const exIds=[...new Set(ss.map(s=>s.exId))];
-    const body=exIds.map(eid=>{ const es=ss.filter(s=>s.exId===eid); const isC=es[0].kind==='cardio';
-      const d=isC?es.map(carLine).join(" | "):es.map(s=>`${fmtKg(s.kg)}×${s.reps}`).join(" · ");
-      return `<div class="ex"><div class="nm">${esc(es[0].exName)}</div><div class="sets">${d}</div></div>`; }).join("");
-    const dur=se.end?` · ${fmtDur(new Date(se.end)-new Date(se.start))}`:"";
-    const pn=se.programName?` · ${esc(se.programName)}`:"";
+  box.innerHTML=done.map(se=>{ const ss=setsOfSession(se.id); const exIds=[...new Set(ss.map(s=>s.exId))];
+    const body=exIds.map(eid=>{ const es=ss.filter(s=>s.exId===eid);
+      return `<div class="ex"><div class="nm">${esc(es[0].exName)}</div><div class="sets">${es.map(lineFor).join(" · ")}</div></div>`; }).join("");
+    const dur=se.end?` · ${fmtDur(new Date(se.end)-new Date(se.start))}`:""; const pn=se.programName?` · ${esc(se.programName)}`:"";
     return `<div class="day card"><div class="date">${fmtFiLong(se.start)}${pn}${dur} · ${fmtKg(volume(ss))} kg</div>${body}</div>`; }).join("");
 }
 
 // ---------- PR ----------
 function renderPR(){
-  const strEx=db.exercises.filter(e=>e.type!=='cardio');
-  const carEx=db.exercises.filter(e=>e.type==='cardio');
-  const sb=$("#prStr");
-  const sRows=strEx.map(e=>{ const ss=db.sets.filter(s=>s.exId===e.id&&s.kind!=='cardio'); if(!ss.length) return null;
-    const maxKg=Math.max(...ss.map(s=>s.kg));
-    const repsAtMax=Math.max(...ss.filter(s=>s.kg===maxKg).map(s=>s.reps));
+  const byType=t=>db.exercises.filter(e=>e.type===t);
+  // voima
+  $("#prStr").innerHTML=prRows(byType('strength').map(e=>{ const ss=db.sets.filter(s=>s.exId===e.id&&s.kind==='strength'); if(!ss.length) return null;
+    const maxKg=Math.max(...ss.map(s=>s.kg)); const repsAtMax=Math.max(...ss.filter(s=>s.kg===maxKg).map(s=>s.reps));
     const e1rm=Math.max(...ss.map(s=>s.kg*(1+s.reps/30)));
-    return {e,maxKg,repsAtMax,e1rm}; }).filter(Boolean).sort((a,b)=>b.e1rm-a.e1rm);
-  sb.innerHTML=sRows.length?sRows.map(r=>`<div class="prrow">
-    <div class="av" style="background:hsl(${hue(r.e.name)} 60% 45%)">${esc(avInit(r.e.name))}</div>
-    <div class="pn"><b>${esc(r.e.name)}</b><span>arvioitu 1RM ${fmtKg(r.e1rm)} kg</span></div>
-    <div class="pv">${fmtKg(r.maxKg)} kg × ${r.repsAtMax}</div></div>`).join("")
-    :'<div class="muted">Ei vielä voimakirjauksia.</div>';
-  const cb=$("#prCar");
-  const cRows=carEx.map(e=>{ const ss=db.sets.filter(s=>s.exId===e.id&&s.kind==='cardio'); if(!ss.length) return null;
-    const maxDist=Math.max(...ss.map(s=>s.distKm||0));
-    const maxDur=Math.max(...ss.map(s=>s.durMin||0));
-    const paced=ss.filter(s=>s.distKm>0&&s.durMin>0);
-    const bestPace=paced.length?Math.min(...paced.map(s=>s.durMin/s.distKm)):null;
-    return {e,maxDist,maxDur,bestPace}; }).filter(Boolean).sort((a,b)=>b.maxDist-a.maxDist);
-  cb.innerHTML=cRows.length?cRows.map(r=>`<div class="prrow">
-    <div class="av" style="background:hsl(${hue(r.e.name)} 70% 50%)">🏃</div>
-    <div class="pn"><b>${esc(r.e.name)}</b><span>pisin aika ${fmtKg(r.maxDur)} min</span></div>
-    <div class="pv">${r.maxDist?fmtKg(r.maxDist)+" km":"–"}${r.bestPace?`<br>tahti ${paceStr(r.bestPace,1)}/km`:""}</div></div>`).join("")
-    :'<div class="muted">Ei vielä kestävyyskirjauksia.</div>';
+    return {e,sub:`arvioitu 1RM ${fmtKg(e1rm)} kg`,val:`${fmtKg(maxKg)} kg × ${repsAtMax}`,sort:e1rm}; }),"Ei voimakirjauksia.");
+  // pito
+  $("#prHold").innerHTML=prRows(byType('hold').map(e=>{ const ss=db.sets.filter(s=>s.exId===e.id&&s.kind==='hold'); if(!ss.length) return null;
+    const max=Math.max(...ss.map(s=>s.sec)); const tot=ss.reduce((a,s)=>a+s.sec,0);
+    return {e,sub:`yht. ${tot}s · ${ss.length} kertaa`,val:`${max} s`,sort:max,ic:'⏱'}; }),"Ei pitokirjauksia.");
+  // kanto
+  $("#prCarry").innerHTML=prRows(byType('carry').map(e=>{ const ss=db.sets.filter(s=>s.exId===e.id&&s.kind==='carry'); if(!ss.length) return null;
+    const maxKg=Math.max(...ss.map(s=>s.kg||0)); const maxM=Math.max(...ss.map(s=>s.distM||0));
+    return {e,sub:`pisin matka ${maxM} m`,val:`${fmtKg(maxKg)} kg`,sort:maxKg,ic:'🧳'}; }),"Ei kantokirjauksia.");
+  // kestävyys
+  $("#prCar").innerHTML=prRows(byType('cardio').map(e=>{ const ss=db.sets.filter(s=>s.exId===e.id&&s.kind==='cardio'); if(!ss.length) return null;
+    const maxDist=Math.max(...ss.map(s=>s.distKm||0)); const maxDur=Math.max(...ss.map(s=>s.durMin||0));
+    const paced=ss.filter(s=>s.distKm>0&&s.durMin>0); const bp=paced.length?Math.min(...paced.map(s=>s.durMin/s.distKm)):null;
+    return {e,sub:`pisin aika ${fmtKg(maxDur)} min`,val:`${maxDist?fmtKg(maxDist)+" km":"–"}${bp?`<br>tahti ${paceStr(bp,1)}/km`:""}`,sort:maxDist,ic:'🏃'}; }),"Ei kestävyyskirjauksia.");
+}
+function prRows(rows,emptyMsg){ rows=rows.filter(Boolean).sort((a,b)=>b.sort-a.sort);
+  if(!rows.length) return `<div class="muted">${emptyMsg}</div>`;
+  return rows.map(r=>`<div class="prrow"><div class="av" style="background:hsl(${hue(r.e.name)} 60% 47%)">${r.ic||esc(avInit(r.e.name))}</div>
+    <div class="pn"><b>${esc(r.e.name)}</b><span>${r.sub}</span></div><div class="pv">${r.val}</div></div>`).join("");
 }
 
-// ---------- stats + copy ----------
+// ---------- stats ----------
 function sessionText(se){
-  const ss=setsOfSession(se.id); if(!ss.length) return "";
-  const exIds=[...new Set(ss.map(s=>s.exId))];
+  const ss=setsOfSession(se.id); if(!ss.length) return ""; const exIds=[...new Set(ss.map(s=>s.exId))];
   let out=`🏋️ Treeni ${new Date(se.start).toLocaleDateString('fi-FI')}`;
-  if(se.programName) out+=` · ${se.programName}`;
-  if(se.end) out+=` · kesto ${fmtDur(new Date(se.end)-new Date(se.start))}`;
-  out+="\n";
-  exIds.forEach(eid=>{ const es=ss.filter(s=>s.exId===eid);
-    if(es[0].kind==='cardio'){
-      es.forEach(s=>{ out+=`• ${es[0].exName} (kestävyys) — ${carLine(s)}${s.note?` [${s.note}]`:""}\n`; });
-    } else {
-      const sets=es.map(s=>`${fmtKg(s.kg)}×${s.reps}${s.note?` [${s.note}]`:""}`).join(", ");
-      out+=`• ${es[0].exName} — ${es.length} sarjaa: ${sets}  (${reps(es)} t, ${fmtKg(volume(es))} kg)\n`; }
+  if(se.programName) out+=` · ${se.programName}`; if(se.end) out+=` · kesto ${fmtDur(new Date(se.end)-new Date(se.start))}`; out+="\n";
+  exIds.forEach(eid=>{ const es=ss.filter(s=>s.exId===eid),ty=es[0].kind;
+    if(ty==='cardio'){ es.forEach(s=>{ out+=`• ${es[0].exName} (kestävyys) — ${carLine(s)}${s.note?` [${s.note}]`:""}\n`; }); }
+    else if(ty==='hold'){ const secs=es.map(s=>s.sec); out+=`• ${es[0].exName} (pito) — ${es.length} toistoa: ${es.map(s=>s.sec+"s"+(s.note?` [${s.note}]`:"")).join(", ")}  (yht. ${secs.reduce((a,b)=>a+b,0)}s)\n`; }
+    else if(ty==='carry'){ out+=`• ${es[0].exName} (kanto) — ${es.length} toistoa: ${es.map(s=>carryLine(s)+(s.note?` [${s.note}]`:"")).join(", ")}\n`; }
+    else { const sets=es.map(s=>`${fmtKg(s.kg)}×${s.reps}${s.note?` [${s.note}]`:""}`).join(", "); out+=`• ${es[0].exName} — ${es.length} sarjaa: ${sets}  (${reps(es)} t, ${fmtKg(volume(es))} kg)\n`; }
   });
   const str=strSets(ss),car=carSets(ss);
   out+=`Yhteensä: ${exIds.length} liikettä`;
-  if(str.length) out+=` · ${str.length} voimasarjaa · ${reps(ss)} toistoa · volyymi ${fmtKg(volume(ss))} kg`;
-  if(car.length){ const km=car.reduce((a,s)=>a+(s.distKm||0),0),min=car.reduce((a,s)=>a+(s.durMin||0),0);
-    out+=`\nKestävyys: ${fmtKg(km)} km · ${fmtKg(min)} min`; }
+  if(volume(ss)>0) out+=` · volyymi ${fmtKg(volume(ss))} kg`;
+  if(str.length) out+=` · ${reps(ss)} toistoa`;
+  if(car.length){ const km=car.reduce((a,s)=>a+(s.distKm||0),0),min=car.reduce((a,s)=>a+(s.durMin||0),0); out+=`\nKestävyys: ${fmtKg(km)} km · ${fmtKg(min)} min`; }
   return out;
 }
 function renderStats(){
@@ -676,8 +738,8 @@ $("#copyAll").onclick=()=>copyText($("#allText").textContent);
 // ---------- backup ----------
 function dl(blob,name){ const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=name; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),2000); }
 $("#exportBtn").onclick=()=>dl(new Blob([JSON.stringify(db,null,2)],{type:"application/json"}),`treeniloki-${todayStr()}.json`);
-$("#csvBtn").onclick=()=>{ const rows=[["paiva","liike","tyyppi","paino_kg","toistot","matka_km","aika_min","syke","kommentti"]];
-  db.sets.slice().sort((a,b)=>a.t.localeCompare(b.t)).forEach(s=>rows.push([s.date,s.exName,s.kind,s.kg??"",s.reps??"",s.distKm??"",s.durMin??"",s.hr??"",s.note||""]));
+$("#csvBtn").onclick=()=>{ const rows=[["paiva","liike","tyyppi","paino_kg","toistot","matka_km","aika_min","syke","kesto_s","matka_m","kommentti"]];
+  db.sets.slice().sort((a,b)=>a.t.localeCompare(b.t)).forEach(s=>rows.push([s.date,s.exName,s.kind,s.kg??"",s.reps??"",s.distKm??"",s.durMin??"",s.hr??"",s.sec??"",s.distM??"",s.note||""]));
   const csv=rows.map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(",")).join("\n");
   dl(new Blob([csv],{type:"text/csv"}),`treeniloki-${todayStr()}.csv`); };
 $("#importBtn").onclick=()=>$("#importFile").click();
@@ -685,15 +747,12 @@ $("#importFile").onchange=e=>{ const f=e.target.files[0]; if(!f) return; const r
   r.onload=()=>{ try{ const d=JSON.parse(r.result); if(!Array.isArray(d.sets)) throw 0;
     if(confirm(`Tuodaan: ${d.sets.length} kirjausta, ${(d.exercises||[]).length} liikettä. Korvataan nykyinen?`)){
       db=d; db.programs=db.programs||[]; if(db.activeSession===undefined) db.activeSession=null;
-      db.exercises.forEach(x=>{if(!x.type)x.type='strength';}); db.sets.forEach(x=>{if(!x.kind)x.kind='strength';});
-      save(); show("ex"); toast("Tuotu ✓"); } }
+      db.exercises.forEach(x=>{if(!x.type)x.type='strength';}); db.sets.forEach(x=>{if(!x.kind)x.kind='strength';}); save(); show("ex"); toast("Tuotu ✓"); } }
     catch(_){ alert("Virheellinen tiedosto."); } }; r.readAsText(f); };
-$("#wipeBtn").onclick=()=>{ if(confirm("Poistetaanko KAIKKI data? Tee varmuuskopio ensin.")){
-  db={exercises:[],sessions:[],sets:[],programs:[],activeSession:null,v:3}; save(); show("ex"); } };
+$("#wipeBtn").onclick=()=>{ if(confirm("Poistetaanko KAIKKI data? Tee varmuuskopio ensin.")){ db={exercises:[],sessions:[],sets:[],programs:[],activeSession:null,v:4}; save(); show("ex"); } };
 
 // ---------- init ----------
-function refreshStreak(){ const n=db.sessions.filter(s=>setsOfSession(s.id).length).length;
-  $("#streak").textContent=n?`${n} treeniä`:"Aloita!"; }
+function refreshStreak(){ const n=db.sessions.filter(s=>setsOfSession(s.id).length).length; $("#streak").textContent=n?`${n} treeniä`:"Aloita!"; }
 renderSessBar(); renderGrid(); refreshStreak();
 if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(()=>{});
 </script>

@@ -1,5 +1,5 @@
 // Treeniloki service worker — tekee appista offline-toimivan
-const CACHE = "treeniloki-v3";
+const CACHE = "treeniloki-v4";
 const ASSETS = ["./", "./index.html", "./manifest.json", "./icon-180.png", "./icon-512.png"];
 
 self.addEventListener("install", e => {
